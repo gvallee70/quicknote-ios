@@ -7,21 +7,29 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E4353B2A25A66F4800E47546 /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4353B2825A66F4800E47546 /* MainTableViewController.swift */; };
+		E4353B2B25A66F4800E47546 /* MainTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E4353B2925A66F4800E47546 /* MainTableViewController.xib */; };
+		E4353B2F25A66FB800E47546 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4353B2E25A66FB800E47546 /* Note.swift */; };
+		E486389F25AE7A9C0029DA46 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E486389E25AE7A9C0029DA46 /* UIViewExtension.swift */; };
+		E48638A325AE7B4C0029DA46 /* NoteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48638A125AE7B4C0029DA46 /* NoteTableViewCell.swift */; };
+		E48638A425AE7B4C0029DA46 /* NoteTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E48638A225AE7B4C0029DA46 /* NoteTableViewCell.xib */; };
 		E4E783BC25A6058F005CF503 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E783BB25A6058F005CF503 /* AppDelegate.swift */; };
 		E4E783C525A60590005CF503 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4E783C425A60590005CF503 /* Assets.xcassets */; };
 		E4E783C825A60590005CF503 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4E783C625A60590005CF503 /* LaunchScreen.storyboard */; };
-		E4E783D625A605EF005CF503 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E783D425A605EF005CF503 /* HomeViewController.swift */; };
-		E4E783D725A605EF005CF503 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E4E783D525A605EF005CF503 /* HomeViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E4353B2825A66F4800E47546 /* MainTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewController.swift; sourceTree = "<group>"; };
+		E4353B2925A66F4800E47546 /* MainTableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainTableViewController.xib; sourceTree = "<group>"; };
+		E4353B2E25A66FB800E47546 /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
+		E486389E25AE7A9C0029DA46 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
+		E48638A125AE7B4C0029DA46 /* NoteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteTableViewCell.swift; sourceTree = "<group>"; };
+		E48638A225AE7B4C0029DA46 /* NoteTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoteTableViewCell.xib; sourceTree = "<group>"; };
 		E4E783B825A6058F005CF503 /* QuickNote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuickNote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4E783BB25A6058F005CF503 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E4E783C425A60590005CF503 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E4E783C725A60590005CF503 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E4E783C925A60590005CF503 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E4E783D425A605EF005CF503 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		E4E783D525A605EF005CF503 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +43,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E4353B2D25A66FAB00E47546 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E4353B2E25A66FB800E47546 /* Note.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		E486389B25AE7A1A0029DA46 /* MainScene */ = {
+			isa = PBXGroup;
+			children = (
+				E4353B2825A66F4800E47546 /* MainTableViewController.swift */,
+				E4353B2925A66F4800E47546 /* MainTableViewController.xib */,
+				E48638A125AE7B4C0029DA46 /* NoteTableViewCell.swift */,
+				E48638A225AE7B4C0029DA46 /* NoteTableViewCell.xib */,
+			);
+			path = MainScene;
+			sourceTree = "<group>";
+		};
+		E486389D25AE7A860029DA46 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				E486389E25AE7A9C0029DA46 /* UIViewExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		E4E783AF25A6058F005CF503 = {
 			isa = PBXGroup;
 			children = (
@@ -54,6 +89,8 @@
 		E4E783BA25A6058F005CF503 /* QuickNote */ = {
 			isa = PBXGroup;
 			children = (
+				E486389D25AE7A860029DA46 /* Extensions */,
+				E4353B2D25A66FAB00E47546 /* Models */,
 				E4E783D325A605D2005CF503 /* Scenes */,
 				E4E783BB25A6058F005CF503 /* AppDelegate.swift */,
 				E4E783C425A60590005CF503 /* Assets.xcassets */,
@@ -66,8 +103,7 @@
 		E4E783D325A605D2005CF503 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				E4E783D425A605EF005CF503 /* HomeViewController.swift */,
-				E4E783D525A605EF005CF503 /* HomeViewController.xib */,
+				E486389B25AE7A1A0029DA46 /* MainScene */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -130,8 +166,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				E4E783C825A60590005CF503 /* LaunchScreen.storyboard in Resources */,
+				E4353B2B25A66F4800E47546 /* MainTableViewController.xib in Resources */,
 				E4E783C525A60590005CF503 /* Assets.xcassets in Resources */,
-				E4E783D725A605EF005CF503 /* HomeViewController.xib in Resources */,
+				E48638A425AE7B4C0029DA46 /* NoteTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -142,8 +179,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E4353B2A25A66F4800E47546 /* MainTableViewController.swift in Sources */,
 				E4E783BC25A6058F005CF503 /* AppDelegate.swift in Sources */,
-				E4E783D625A605EF005CF503 /* HomeViewController.swift in Sources */,
+				E486389F25AE7A9C0029DA46 /* UIViewExtension.swift in Sources */,
+				E48638A325AE7B4C0029DA46 /* NoteTableViewCell.swift in Sources */,
+				E4353B2F25A66FB800E47546 /* Note.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
