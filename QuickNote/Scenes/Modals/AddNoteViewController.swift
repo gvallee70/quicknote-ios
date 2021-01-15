@@ -13,16 +13,18 @@ class AddNoteViewController: UIViewController {
     
     @IBOutlet weak var titleTextField: UITextField!
     
-    @IBOutlet weak var commentTextField: UITextField!
+    @IBOutlet weak var descriptionTextField: UITextField!
+    
+    @IBOutlet weak var cancelOutlet: UIButton!
+    @IBAction func cancelButton(_ sender: UIButton) {
+        dismiss(animated: true, completion: nil)
+
+    }
     
     @IBOutlet weak var validateOutlet: UIButton!
     @IBAction func validateButton(_ sender: UIButton) {
     }
-    
-    @objc private func dismissModal() {
-        dismiss(animated: true, completion: nil)
-    }
-    
+        
     
     func setBottomBorder(textField: UITextField) {
         textField.borderStyle = .none
@@ -44,11 +46,17 @@ class AddNoteViewController: UIViewController {
         super.viewDidLoad()
         
         self.titleTextField.delegate = self
-        self.commentTextField.delegate = self
-      
+        self.descriptionTextField.delegate = self
+        
+        self.cancelOutlet.setTitle("\(NSLocalizedString("controller.add_note.cancel", comment: ""))", for: .normal)
+        self.titleLabel.text = NSLocalizedString("controller.add_note.main_title", comment: "")
+        self.titleTextField.placeholder = NSLocalizedString("controller.add_note.title_placeholder", comment: "")
+        self.descriptionTextField.placeholder = NSLocalizedString("controller.add_note.description_placeholder", comment: "")
+    
+    
         //Set textField UI (with bottom border only)
         setBottomBorder(textField: titleTextField)
-        setBottomBorder(textField: commentTextField)
+        setBottomBorder(textField: descriptionTextField)
 
         //Set valide image size
         validateOutlet.imageEdgeInsets = UIEdgeInsets(top: 25, left: 25, bottom: 25, right: 25)
@@ -65,8 +73,8 @@ extension AddNoteViewController: UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if textField == self.titleTextField {
-            self.commentTextField.becomeFirstResponder()
-        } else if textField == self.commentTextField {
+            self.descriptionTextField.becomeFirstResponder()
+        } else if textField == self.descriptionTextField {
             textField.resignFirstResponder()
         }
         return true
