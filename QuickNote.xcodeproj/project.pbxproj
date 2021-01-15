@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BEE0DFEE25B10449009A46A4 /* AddNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE0DFEC25B10449009A46A4 /* AddNoteViewController.swift */; };
+		BEE0DFEF25B10449009A46A4 /* AddNoteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BEE0DFED25B10449009A46A4 /* AddNoteViewController.xib */; };
 		E4353B2A25A66F4800E47546 /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4353B2825A66F4800E47546 /* MainTableViewController.swift */; };
 		E4353B2B25A66F4800E47546 /* MainTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E4353B2925A66F4800E47546 /* MainTableViewController.xib */; };
 		E4353B2F25A66FB800E47546 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4353B2E25A66FB800E47546 /* Note.swift */; };
@@ -19,6 +21,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BEE0DFEC25B10449009A46A4 /* AddNoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNoteViewController.swift; sourceTree = "<group>"; };
+		BEE0DFED25B10449009A46A4 /* AddNoteViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddNoteViewController.xib; sourceTree = "<group>"; };
 		E4353B2825A66F4800E47546 /* MainTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewController.swift; sourceTree = "<group>"; };
 		E4353B2925A66F4800E47546 /* MainTableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainTableViewController.xib; sourceTree = "<group>"; };
 		E4353B2E25A66FB800E47546 /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
@@ -43,6 +47,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BEE0DFEB25B10364009A46A4 /* Modals */ = {
+			isa = PBXGroup;
+			children = (
+				BEE0DFEC25B10449009A46A4 /* AddNoteViewController.swift */,
+				BEE0DFED25B10449009A46A4 /* AddNoteViewController.xib */,
+			);
+			path = Modals;
+			sourceTree = "<group>";
+		};
 		E4353B2D25A66FAB00E47546 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -103,6 +116,7 @@
 		E4E783D325A605D2005CF503 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				BEE0DFEB25B10364009A46A4 /* Modals */,
 				E486389B25AE7A1A0029DA46 /* MainScene */,
 			);
 			path = Scenes;
@@ -168,6 +182,7 @@
 				E4E783C825A60590005CF503 /* LaunchScreen.storyboard in Resources */,
 				E4353B2B25A66F4800E47546 /* MainTableViewController.xib in Resources */,
 				E4E783C525A60590005CF503 /* Assets.xcassets in Resources */,
+				BEE0DFEF25B10449009A46A4 /* AddNoteViewController.xib in Resources */,
 				E48638A425AE7B4C0029DA46 /* NoteTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -181,6 +196,7 @@
 			files = (
 				E4353B2A25A66F4800E47546 /* MainTableViewController.swift in Sources */,
 				E4E783BC25A6058F005CF503 /* AppDelegate.swift in Sources */,
+				BEE0DFEE25B10449009A46A4 /* AddNoteViewController.swift in Sources */,
 				E486389F25AE7A9C0029DA46 /* UIViewExtension.swift in Sources */,
 				E48638A325AE7B4C0029DA46 /* NoteTableViewCell.swift in Sources */,
 				E4353B2F25A66FB800E47546 /* Note.swift in Sources */,

@@ -12,6 +12,8 @@ class MainTableViewController: UITableViewController {
                          Note(title: "Test 2", content: "This is a second test"),
                          Note(title: "Test 3", content: "This is a third test")]
     
+    let addNoteViewController = AddNoteViewController(nibName: "AddNoteViewController", bundle: nil)
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "QuickNote"
@@ -19,12 +21,18 @@ class MainTableViewController: UITableViewController {
         tableView.register(UINib(nibName: "NoteTableViewCell", bundle: nil), forCellReuseIdentifier: "note-cell")
     }
     
-    override func viewWillAppear(_ animated: Bool) {
+    @objc private func addButton() {
+        self.present(addNoteViewController, animated: true, completion: nil)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {        
         self.navigationController?.setNavigationBarHidden(false, animated: animated)
         self.navigationController?.navigationBar.prefersLargeTitles = true
         
-        let rightButton = UIBarButtonItem(barButtonSystemItem: .add, target: nil, action: nil)
+        let rightButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addButton))
         self.navigationItem.rightBarButtonItem = rightButton
+        
+     
     }
 
     // MARK: - Table view
