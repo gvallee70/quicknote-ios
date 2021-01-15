@@ -1,0 +1,16 @@
+/* 
+  Localizable.strings
+  QuickNote
+
+  Created by Gwendal on 15/01/2021.
+  
+*/
+
+"controller.add_note.cancel" = " Cancel";
+"controller.add_note.main_title" = "What's new?";
+"controller.add_note.title_placeholder" = "Title";
+"controller.add_note.description_placeholder" = "Description";
+
+
+
+

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BE3DD8ED25B243F300A63892 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = BE3DD8EF25B243F300A63892 /* Localizable.strings */; };
 		BEE0DFEE25B10449009A46A4 /* AddNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE0DFEC25B10449009A46A4 /* AddNoteViewController.swift */; };
 		BEE0DFEF25B10449009A46A4 /* AddNoteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BEE0DFED25B10449009A46A4 /* AddNoteViewController.xib */; };
 		E4353B2A25A66F4800E47546 /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4353B2825A66F4800E47546 /* MainTableViewController.swift */; };
@@ -21,6 +22,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BE3DD8EE25B243F300A63892 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		BE3DD8F125B2441500A63892 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		BEE0DFEC25B10449009A46A4 /* AddNoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNoteViewController.swift; sourceTree = "<group>"; };
 		BEE0DFED25B10449009A46A4 /* AddNoteViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddNoteViewController.xib; sourceTree = "<group>"; };
 		E4353B2825A66F4800E47546 /* MainTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewController.swift; sourceTree = "<group>"; };
@@ -109,6 +112,7 @@
 				E4E783C425A60590005CF503 /* Assets.xcassets */,
 				E4E783C625A60590005CF503 /* LaunchScreen.storyboard */,
 				E4E783C925A60590005CF503 /* Info.plist */,
+				BE3DD8EF25B243F300A63892 /* Localizable.strings */,
 			);
 			path = QuickNote;
 			sourceTree = "<group>";
@@ -163,6 +167,7 @@
 			knownRegions = (
 				en,
 				Base,
+				fr,
 			);
 			mainGroup = E4E783AF25A6058F005CF503;
 			productRefGroup = E4E783B925A6058F005CF503 /* Products */;
@@ -180,6 +185,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E4E783C825A60590005CF503 /* LaunchScreen.storyboard in Resources */,
+				BE3DD8ED25B243F300A63892 /* Localizable.strings in Resources */,
 				E4353B2B25A66F4800E47546 /* MainTableViewController.xib in Resources */,
 				E4E783C525A60590005CF503 /* Assets.xcassets in Resources */,
 				BEE0DFEF25B10449009A46A4 /* AddNoteViewController.xib in Resources */,
@@ -206,6 +212,15 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		BE3DD8EF25B243F300A63892 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BE3DD8EE25B243F300A63892 /* en */,
+				BE3DD8F125B2441500A63892 /* fr */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		E4E783C625A60590005CF503 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -221,6 +236,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -282,6 +298,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
