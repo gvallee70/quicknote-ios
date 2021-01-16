@@ -5,6 +5,7 @@
   Created by Gwendal on 15/01/2021.
   
 */
+"controller.search_bar.placeholder" = "Rechercher";
 
 "controller.add_note.cancel" = " Annuler";
 "controller.add_note.main_title" = "Quoi de neuf ?";

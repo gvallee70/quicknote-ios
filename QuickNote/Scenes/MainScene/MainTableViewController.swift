@@ -55,7 +55,8 @@ class MainTableViewController: UITableViewController {
 
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
-        searchController.searchBar.placeholder = "Search a note"
+        searchController.searchBar.placeholder = NSLocalizedString("controller.search_bar.placeholder", comment: "")
+
         navigationItem.searchController = searchController
         definesPresentationContext = true
         
