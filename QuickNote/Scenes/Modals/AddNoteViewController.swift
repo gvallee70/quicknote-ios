@@ -48,7 +48,7 @@ class AddNoteViewController: UIViewController {
         self.titleTextField.delegate = self
         self.descriptionTextField.delegate = self
         
-        self.cancelOutlet.setTitle("\(NSLocalizedString("controller.add_note.cancel", comment: ""))", for: .normal)
+        self.cancelOutlet.setTitle("\(NSLocalizedString("controller.navigation.cancel", comment: ""))", for: .normal)
         self.titleLabel.text = NSLocalizedString("controller.add_note.main_title", comment: "")
         self.titleTextField.placeholder = NSLocalizedString("controller.add_note.title_placeholder", comment: "")
         self.descriptionTextField.placeholder = NSLocalizedString("controller.add_note.description_placeholder", comment: "")

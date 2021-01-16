@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		BE3DD8ED25B243F300A63892 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = BE3DD8EF25B243F300A63892 /* Localizable.strings */; };
+		BE5EC83325B3A27000279CF8 /* NoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5EC83125B3A27000279CF8 /* NoteViewController.swift */; };
+		BE5EC83425B3A27000279CF8 /* NoteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE5EC83225B3A27000279CF8 /* NoteViewController.xib */; };
 		BEE0DFEE25B10449009A46A4 /* AddNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE0DFEC25B10449009A46A4 /* AddNoteViewController.swift */; };
 		BEE0DFEF25B10449009A46A4 /* AddNoteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BEE0DFED25B10449009A46A4 /* AddNoteViewController.xib */; };
 		E4353B2A25A66F4800E47546 /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4353B2825A66F4800E47546 /* MainTableViewController.swift */; };
@@ -24,6 +26,8 @@
 /* Begin PBXFileReference section */
 		BE3DD8EE25B243F300A63892 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		BE3DD8F125B2441500A63892 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		BE5EC83125B3A27000279CF8 /* NoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteViewController.swift; sourceTree = "<group>"; };
+		BE5EC83225B3A27000279CF8 /* NoteViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoteViewController.xib; sourceTree = "<group>"; };
 		BEE0DFEC25B10449009A46A4 /* AddNoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNoteViewController.swift; sourceTree = "<group>"; };
 		BEE0DFED25B10449009A46A4 /* AddNoteViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddNoteViewController.xib; sourceTree = "<group>"; };
 		E4353B2825A66F4800E47546 /* MainTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewController.swift; sourceTree = "<group>"; };
@@ -50,6 +54,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BE5EC83025B3A23D00279CF8 /* NoteView */ = {
+			isa = PBXGroup;
+			children = (
+				BE5EC83125B3A27000279CF8 /* NoteViewController.swift */,
+				BE5EC83225B3A27000279CF8 /* NoteViewController.xib */,
+			);
+			path = NoteView;
+			sourceTree = "<group>";
+		};
 		BEE0DFEB25B10364009A46A4 /* Modals */ = {
 			isa = PBXGroup;
 			children = (
@@ -120,6 +133,7 @@
 		E4E783D325A605D2005CF503 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				BE5EC83025B3A23D00279CF8 /* NoteView */,
 				BEE0DFEB25B10364009A46A4 /* Modals */,
 				E486389B25AE7A1A0029DA46 /* MainScene */,
 			);
@@ -186,6 +200,7 @@
 			files = (
 				E4E783C825A60590005CF503 /* LaunchScreen.storyboard in Resources */,
 				BE3DD8ED25B243F300A63892 /* Localizable.strings in Resources */,
+				BE5EC83425B3A27000279CF8 /* NoteViewController.xib in Resources */,
 				E4353B2B25A66F4800E47546 /* MainTableViewController.xib in Resources */,
 				E4E783C525A60590005CF503 /* Assets.xcassets in Resources */,
 				BEE0DFEF25B10449009A46A4 /* AddNoteViewController.xib in Resources */,
@@ -200,6 +215,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE5EC83325B3A27000279CF8 /* NoteViewController.swift in Sources */,
 				E4353B2A25A66F4800E47546 /* MainTableViewController.swift in Sources */,
 				E4E783BC25A6058F005CF503 /* AppDelegate.swift in Sources */,
 				BEE0DFEE25B10449009A46A4 /* AddNoteViewController.swift in Sources */,

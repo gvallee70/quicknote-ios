@@ -73,7 +73,6 @@ class MainTableViewController: UITableViewController {
         
         let rightButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addButton))
         self.navigationItem.rightBarButtonItem = rightButton
-        
      
     }
 
@@ -100,6 +99,23 @@ class MainTableViewController: UITableViewController {
         
         return cell
         
+    }
+    
+
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let selectedNote : Note
+        
+        if isFiltering {
+                selectedNote = filteredNotes[indexPath.row]
+            } else {
+                selectedNote = notes[indexPath.row]
+            }
+        
+        let noteViewController = NoteViewController.newInstance(nibName: "NoteViewController", title: selectedNote.getTitle(), content: selectedNote.getContent())
+        
+            self.navigationController?.pushViewController(noteViewController, animated: true)
+
     }
     
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
