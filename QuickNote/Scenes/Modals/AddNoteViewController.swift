@@ -86,14 +86,23 @@ extension AddNoteViewController: UITextFieldDelegate {
         if textField == self.titleTextField {
             let text = (textField.text! as NSString).replacingCharacters(in: range, with: string)
             
-            if text.isEmpty{
+            let maxCharacters = 40
+            let currentString: NSString = (textField.text ?? "") as NSString
+            let newString: NSString =
+                    currentString.replacingCharacters(in: range, with: string) as NSString
+            
+            if text.isEmpty {
                 validateOutlet.tintColor = .gray
                 validateOutlet.isEnabled = false
             } else {
                 validateOutlet.isEnabled = true
                 validateOutlet.tintColor = .systemBlue
            }
+            
+            return newString.length <= maxCharacters
+            
         }
+       
         return true
       }
     
