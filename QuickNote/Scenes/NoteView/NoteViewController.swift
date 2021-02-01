@@ -11,11 +11,16 @@ class NoteViewController: UIViewController {
 
     var noteTitle: String?
     var noteContent: String!
+        
     
+    @IBOutlet weak var noteTitleTextView: UITextView!
     
-    @IBOutlet weak var noteTitleLabel: UILabel!
-    @IBOutlet weak var noteContentLabel: UILabel!
+    @IBOutlet weak var noteContentTextView: UITextView!
     
+    let backButton = UIBarButtonItem()
+    let validateEditButton = UIBarButtonItem(barButtonSystemItem: .done , target: self, action: #selector(validateEdit))
+    
+   
     class func newInstance(nibName: String?, title: String, content: String) -> NoteViewController {
         let vc = NoteViewController(nibName: nibName, bundle: nil)
         vc.noteTitle = title
@@ -25,24 +30,47 @@ class NoteViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        noteTitleLabel.text = noteTitle
-        noteContentLabel.text = noteContent
         
-        let backButton = UIBarButtonItem()
+        self.noteTitleTextView.delegate = self
+        self.noteContentTextView.delegate = self
+        
+        noteContentTextView.isHidden = false
+        
         backButton.title = NSLocalizedString("controller.navigation.notes", comment: "")
-        self.navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
+
+        noteTitleTextView.text = noteTitle
+        noteTitleTextView.textContainer.maximumNumberOfLines = 2
+        noteContentTextView.text = noteContent
+
+        navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
+        navigationItem.rightBarButtonItem = validateEditButton
+        
+        validateEditButton.isEnabled = false
+        
     }
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+    
 }
+
+
+extension NoteViewController: UITextViewDelegate {
+    
+    func textViewDidChange(_ textView: UITextView) {
+        validateEditButton.isEnabled = true
+    }
+    
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        if(text == "\n"){
+            if textView == self.noteTitleTextView {
+                self.noteContentTextView.becomeFirstResponder()
+            } else if textView == self.noteContentTextView {
+                textView.resignFirstResponder()
+            }
+            return false
+        }
+        
+        return true
+    }
+    
+    
+}
+
