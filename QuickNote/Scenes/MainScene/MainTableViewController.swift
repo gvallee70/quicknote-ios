@@ -23,7 +23,7 @@ class MainTableViewController: UITableViewController {
     var notes: [Note] = [Note(title: "Test 1", content: "This is a first test"),
                          Note(title: "Test 2", content: "This is a second test"),
                          Note(title: "Test 3", content: "This is a third test"),
-                         Note(title: "Test 4", content: "This is a first test"),
+                         Note(title: "Test fgyabda ubdaubdau bdaud bdaudadua4", content: "This is a first This is a first testThis is a first testThis is a first testThis is a first testThis is a first testThis is a first testThis is a first testThis is a first testThis is a first testThis is a first testThis is a first testThis is a first testThis is a first testThis is a first testThis is a first testThis is a first testThis is a first testThis is a first test"),
                          Note(title: "Test 5", content: "This is a second test"),
                          Note(title: "Test 6", content: "This is a third test"),
                          Note(title: "Test 7", content: "This is a first test"),
