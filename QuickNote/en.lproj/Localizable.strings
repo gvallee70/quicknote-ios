@@ -13,7 +13,7 @@
 
 "controller.add_note.main_title" = "What's new?";
 "controller.add_note.title_placeholder" = "Title";
-"controller.add_note.description_placeholder" = "Description";
+"controller.add_note.content_placeholder" = "Content";
 
 
 

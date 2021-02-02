@@ -28,6 +28,10 @@ class NoteViewController: UIViewController {
         return vc
     }
     
+    @objc private func validateEdit() {
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

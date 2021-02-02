@@ -13,13 +13,16 @@ class AddNoteViewController: UIViewController {
     
     @IBOutlet weak var titleTextField: UITextField!
     
-    @IBOutlet weak var descriptionTextField: UITextField!
+    @IBOutlet weak var contentTextView: UITextView!
+    
+    let contentTextViewPlaceholder = NSLocalizedString("controller.add_note.content_placeholder", comment: "")
     
     @IBOutlet weak var cancelOutlet: UIButton!
     @IBAction func cancelButton(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
 
     }
+
     
     @IBOutlet weak var validateOutlet: UIButton!
     @IBAction func validateButton(_ sender: UIButton) {
@@ -42,21 +45,33 @@ class AddNoteViewController: UIViewController {
     }
     
     
+    var bottomBorder = UIView()
+
+    func setBottomBorder(textView: UITextView) {
+        textView.layoutIfNeeded()
+        
+        bottomBorder = UIView.init(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
+               bottomBorder.backgroundColor = .red
+               bottomBorder.translatesAutoresizingMaskIntoConstraints = false
+        
+        textView.superview!.addSubview(bottomBorder)
+
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.titleTextField.delegate = self
-        self.descriptionTextField.delegate = self
+        self.contentTextView.delegate = self
         
         self.cancelOutlet.setTitle("\(NSLocalizedString("controller.navigation.cancel", comment: ""))", for: .normal)
         self.titleLabel.text = NSLocalizedString("controller.add_note.main_title", comment: "")
         self.titleTextField.placeholder = NSLocalizedString("controller.add_note.title_placeholder", comment: "")
-        self.descriptionTextField.placeholder = NSLocalizedString("controller.add_note.description_placeholder", comment: "")
-    
-    
+        
         //Set textField UI (with bottom border only)
         setBottomBorder(textField: titleTextField)
-        setBottomBorder(textField: descriptionTextField)
+        setBottomBorder(textView: contentTextView)
 
         //Set valide image size
         validateOutlet.imageEdgeInsets = UIEdgeInsets(top: 25, left: 25, bottom: 25, right: 25)
@@ -64,6 +79,8 @@ class AddNoteViewController: UIViewController {
         validateOutlet.isEnabled = false
         validateOutlet.tintColor = .gray
 
+        contentTextView.text = contentTextViewPlaceholder
+        contentTextView.font = .systemFont(ofSize: 18.0)
     }
     
 }
@@ -73,9 +90,7 @@ extension AddNoteViewController: UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if textField == self.titleTextField {
-            self.descriptionTextField.becomeFirstResponder()
-        } else if textField == self.descriptionTextField {
-            textField.resignFirstResponder()
+            self.contentTextView.becomeFirstResponder()
         }
         return true
     }
@@ -105,6 +120,38 @@ extension AddNoteViewController: UITextFieldDelegate {
        
         return true
       }
+    
+}
+
+
+extension AddNoteViewController: UITextViewDelegate {
+    
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        if textView.text == contentTextViewPlaceholder {
+            textView.textColor = UIColor.black
+            textView.text = ""
+        }
+        if(text == "\n"){
+            textView.resignFirstResponder()
+            return false
+        }
+
+        return true
+    }
+    
+    func textViewDidChange(_ textView: UITextView) {
+        if textView.text.isEmpty {
+            textView.text = contentTextViewPlaceholder
+            textView.textColor = UIColor.lightGray
+        }
+    }
+    
+    func textViewDidEndEditing(_ textView: UITextView) {
+        if textView.text.isEmpty {
+            textView.text = contentTextViewPlaceholder
+            textView.textColor = UIColor.lightGray
+        }
+    }
     
 }
 
