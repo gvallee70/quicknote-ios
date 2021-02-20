@@ -14,8 +14,6 @@ class AddNoteViewController: UIViewController {
     @IBOutlet weak var cancelButton: UIButton!
     @IBOutlet weak var validateButton: UIButton!
     
-    var userID: String!
-    
     var bottomBorder = UIView()
     
     override func viewDidLoad() {
@@ -40,12 +38,6 @@ class AddNoteViewController: UIViewController {
         contentTextView.font = .systemFont(ofSize: 18.0)
     }
     
-//    class func newInstance(nibName: String?, userID: String) -> NoteDetailsViewController {
-//        let vc = NoteDetailsViewController(nibName: nibName, bundle: nil)
-//        vc.userID = userID
-//        return vc
-//    }
-    
     @IBAction func cancelButtonAction(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
     }
@@ -53,7 +45,7 @@ class AddNoteViewController: UIViewController {
     @IBAction func validateButtonAction(_ sender: UIButton) {
         if let title = titleTextField.text {
             let content = contentTextView.text ?? ""
-            QuickNoteClient.postNote(forUser: userID, withTitle: title, andContent: content) { (success, note) in
+            QuickNoteClient.postNote(forUser: "user", withTitle: title, andContent: content) { (success, note) in
                 if success,
                    let note = note {
                     if let navigationController = self.presentingViewController as? UINavigationController,

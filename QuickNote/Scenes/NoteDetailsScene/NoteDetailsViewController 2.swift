@@ -11,7 +11,6 @@ class NoteDetailsViewController: UIViewController {
     @IBOutlet weak var noteTitleTextView: UITextView!
     @IBOutlet weak var noteContentTextView: UITextView!
     
-    var userID: String!
     var note: Note!
     
     let backButton = UIBarButtonItem()
@@ -38,9 +37,8 @@ class NoteDetailsViewController: UIViewController {
         
     }
     
-    class func newInstance(nibName: String?, userID: String, note: Note) -> NoteDetailsViewController {
+    class func newInstance(nibName: String?, note: Note) -> NoteDetailsViewController {
         let vc = NoteDetailsViewController(nibName: nibName, bundle: nil)
-        vc.userID = userID
         vc.note = note
         return vc
     }
@@ -48,7 +46,7 @@ class NoteDetailsViewController: UIViewController {
     @objc private func validateEdit() {
         if let title = noteTitleTextView.text,
            let content = noteContentTextView.text {
-            QuickNoteClient.modifyNote(forUser: userID, withID: note.id, title: title, andContent: content) { (success) in
+            QuickNoteClient.modifyNote(forUser: "user", withID: note.id, title: title, andContent: content) { (success) in
                 if success {
                     self.navigationController?.popViewController(animated: true)
                 } else {

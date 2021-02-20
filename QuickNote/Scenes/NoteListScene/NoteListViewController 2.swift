@@ -10,7 +10,6 @@ import UIKit
 class NoteListViewController: UIViewController {
     @IBOutlet weak var noteTableView: UITableView!
     
-    var userID: String = ""
     var notes: [Note] = [] {
         didSet {
             noteTableView.reloadData()
@@ -24,11 +23,6 @@ class NoteListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        if let uuid = UIDevice.current.identifierForVendor?.uuidString {
-            print(uuid)
-            userID = uuid
-        }
         
         noteTableView.dataSource = self
         noteTableView.delegate = self
@@ -49,7 +43,7 @@ class NoteListViewController: UIViewController {
                                                             target: self,
                                                             action: #selector(addButtonAction))
         
-        QuickNoteClient.getNotes(forUser: userID) { (success, notes) in
+        QuickNoteClient.getNotes(forUser: "user") { (success, notes) in
             if success,
                let notes = notes {
                 self.notes = notes
@@ -64,8 +58,7 @@ class NoteListViewController: UIViewController {
     }
     
     @objc private func addButtonAction() {
-        let addNoteViewController = AddNoteViewController()
-        addNoteViewController.userID = userID
+        let addNoteViewController = AddNoteViewController(nibName: "AddNoteViewController", bundle: nil)
         present(addNoteViewController, animated: true, completion: nil)
     }
 }
@@ -91,7 +84,7 @@ extension NoteListViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            QuickNoteClient.deleteNote(forUser: userID, withID: notes[indexPath.row].id) { (success) in
+            QuickNoteClient.deleteNote(forUser: "user", withID: notes[indexPath.row].id) { (success) in
                 if success {
                     self.notes.remove(at: indexPath.row)
                 } else {
@@ -116,7 +109,7 @@ extension NoteListViewController: UITableViewDataSource {
 extension NoteListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let note = isFiltering ? self.filteredNotes[indexPath.row] : self.notes[indexPath.row]
-        let controller = NoteDetailsViewController.newInstance(nibName: "NoteDetailsViewController", userID: userID, note: note)
+        let controller = NoteDetailsViewController.newInstance(nibName: "NoteDetailsViewController", note: note)
         self.navigationController?.pushViewController(controller, animated: true)
     }
 }
