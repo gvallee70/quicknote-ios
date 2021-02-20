@@ -14,8 +14,13 @@
 
 "ACTION_BACK" = "Back";
 "ACTION_CANCEL" = "Cancel";
+"ACTION_YES" = "Yes";
+"ACTION_NO" = "No";
+"ACTION_OK" = "Ok";
 
 "LABEL_ERROR" = "Error";
+"LABEL_DELETE" = "Delete";
+"MESSAGE_CONFIRM_DELETE" = "Are you sure to delete this note?";
 "MESSAGE_ERROR_LIST" = "Cannot retrieve notes list. Please check your internet connection.";
 "MESSAGE_ERROR_CREATE" = "Cannot create note. Please check your internet connection.";
 "MESSAGE_ERROR_UPDATE" = "Cannot modify note. Please check your internet connection.";

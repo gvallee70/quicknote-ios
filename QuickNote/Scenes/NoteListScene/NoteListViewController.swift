@@ -57,7 +57,7 @@ class NoteListViewController: UIViewController {
                 let alert = UIAlertController(title: LABEL_ERROR,
                                               message: MESSAGE_ERROR_LIST,
                                               preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title: "Ok", style: .default))
+                alert.addAction(UIAlertAction(title: ACTION_OK, style: .default))
                 self.present(alert, animated: true)
             }
         }
@@ -91,17 +91,26 @@ extension NoteListViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            QuickNoteClient.deleteNote(forUser: userID, withID: notes[indexPath.row].id) { (success) in
-                if success {
-                    self.notes.remove(at: indexPath.row)
-                } else {
-                    let alert = UIAlertController(title: LABEL_ERROR,
-                                                  message: MESSAGE_ERROR_DELETE,
-                                                  preferredStyle: .alert)
-                    alert.addAction(UIAlertAction(title: "Ok", style: .default))
-                    self.present(alert, animated: true)
+            let alert = UIAlertController(title: LABEL_DELETE,
+                                          message: MESSAGE_CONFIRM_DELETE,
+                                          preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: ACTION_NO, style: .default, handler: { (negative) in
+                self.dismiss(animated: true)
+            }))
+            alert.addAction(UIAlertAction(title: ACTION_YES, style: .destructive, handler: { (positive) in
+                QuickNoteClient.deleteNote(forUser: self.userID, withID: self.notes[indexPath.row].id) { (success) in
+                    if success {
+                        self.notes.remove(at: indexPath.row)
+                    } else {
+                        let alert = UIAlertController(title: LABEL_ERROR,
+                                                      message: MESSAGE_ERROR_DELETE,
+                                                      preferredStyle: .alert)
+                        alert.addAction(UIAlertAction(title: ACTION_OK, style: .default))
+                        self.present(alert, animated: true)
+                    }
                 }
-            }
+            }))
+            self.present(alert, animated: true)
         }
     }
     

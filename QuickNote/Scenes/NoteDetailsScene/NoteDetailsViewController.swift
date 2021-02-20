@@ -48,14 +48,14 @@ class NoteDetailsViewController: UIViewController {
     @objc private func validateEdit() {
         if let title = noteTitleTextView.text,
            let content = noteContentTextView.text {
-            QuickNoteClient.modifyNote(forUser: userID, withID: note.id, title: title, andContent: content) { (success) in
+            QuickNoteClient.editNote(forUser: userID, withID: note.id, title: title, andContent: content) { (success) in
                 if success {
                     self.navigationController?.popViewController(animated: true)
                 } else {
                     let alert = UIAlertController(title: LABEL_ERROR,
                                                   message: MESSAGE_ERROR_UPDATE,
                                                   preferredStyle: .alert)
-                    alert.addAction(UIAlertAction(title: "Ok", style: .default))
+                    alert.addAction(UIAlertAction(title: ACTION_OK, style: .default))
                     self.present(alert, animated: true)
                 }
             }

@@ -54,7 +54,7 @@ class AddNoteViewController: UIViewController {
     @IBAction func validateButtonAction(_ sender: UIButton) {
         if let title = titleTextField.text {
             let content = contentTextView.text ?? ""
-            QuickNoteClient.postNote(forUser: userID, withTitle: title, andContent: content) { (success, note) in
+            QuickNoteClient.createNote(forUser: userID, withTitle: title, andContent: content) { (success, note) in
                 if success,
                    let note = note {
                     if let navigationController = self.presentingViewController as? UINavigationController,
@@ -66,7 +66,7 @@ class AddNoteViewController: UIViewController {
                     let alert = UIAlertController(title: LABEL_ERROR,
                                                   message: MESSAGE_ERROR_CREATE,
                                                   preferredStyle: .alert)
-                    alert.addAction(UIAlertAction(title: "Ok", style: .default))
+                    alert.addAction(UIAlertAction(title: ACTION_OK, style: .default))
                     self.present(alert, animated: true)
                 }
             }
