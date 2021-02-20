@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BE1A8FDB25E194AF00D57769 /* Wording.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1A8FDA25E194AF00D57769 /* Wording.swift */; };
 		BE3DD8ED25B243F300A63892 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = BE3DD8EF25B243F300A63892 /* Localizable.strings */; };
 		BE5EC83325B3A27000279CF8 /* NoteDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5EC83125B3A27000279CF8 /* NoteDetailsViewController.swift */; };
 		BE5EC83425B3A27000279CF8 /* NoteDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE5EC83225B3A27000279CF8 /* NoteDetailsViewController.xib */; };
@@ -25,6 +26,7 @@
 /* Begin PBXFileReference section */
 		88FD837223BB4E232B8EAF00 /* Pods-QuickNote.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuickNote.release.xcconfig"; path = "Target Support Files/Pods-QuickNote/Pods-QuickNote.release.xcconfig"; sourceTree = "<group>"; };
 		8B5213868E5BFE4C426B076B /* Pods-QuickNote.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuickNote.debug.xcconfig"; path = "Target Support Files/Pods-QuickNote/Pods-QuickNote.debug.xcconfig"; sourceTree = "<group>"; };
+		BE1A8FDA25E194AF00D57769 /* Wording.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wording.swift; sourceTree = "<group>"; };
 		BE3DD8EE25B243F300A63892 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		BE3DD8F125B2441500A63892 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		BE5EC83125B3A27000279CF8 /* NoteDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteDetailsViewController.swift; sourceTree = "<group>"; };
@@ -61,6 +63,32 @@
 				CDD40977E519B4ED97DA7CA4 /* Pods_QuickNote.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BE1A8FD925E1947500D57769 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				BE1A8FDF25E194F600D57769 /* Wording */,
+				BE1A8FDE25E194DB00D57769 /* Assets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		BE1A8FDE25E194DB00D57769 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				E4E783C425A60590005CF503 /* Assets.xcassets */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		BE1A8FDF25E194F600D57769 /* Wording */ = {
+			isa = PBXGroup;
+			children = (
+				BE3DD8EF25B243F300A63892 /* Localizable.strings */,
+				BE1A8FDA25E194AF00D57769 /* Wording.swift */,
+			);
+			path = Wording;
 			sourceTree = "<group>";
 		};
 		BE5EC83025B3A23D00279CF8 /* NoteDetailsScene */ = {
@@ -136,14 +164,13 @@
 		E4E783BA25A6058F005CF503 /* QuickNote */ = {
 			isa = PBXGroup;
 			children = (
+				E4E783BB25A6058F005CF503 /* AppDelegate.swift */,
 				E4353B2D25A66FAB00E47546 /* Models */,
 				E4E783D325A605D2005CF503 /* Scenes */,
 				E4AEF5A025C9B0AA001ED56F /* Services */,
-				E4E783BB25A6058F005CF503 /* AppDelegate.swift */,
-				E4E783C425A60590005CF503 /* Assets.xcassets */,
 				E4E783C625A60590005CF503 /* LaunchScreen.storyboard */,
 				E4E783C925A60590005CF503 /* Info.plist */,
-				BE3DD8EF25B243F300A63892 /* Localizable.strings */,
+				BE1A8FD925E1947500D57769 /* Resources */,
 			);
 			path = QuickNote;
 			sourceTree = "<group>";
@@ -277,6 +304,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BE5EC83325B3A27000279CF8 /* NoteDetailsViewController.swift in Sources */,
+				BE1A8FDB25E194AF00D57769 /* Wording.swift in Sources */,
 				E4AEF5A225C9B0B9001ED56F /* QuickNoteClient.swift in Sources */,
 				E4E783BC25A6058F005CF503 /* AppDelegate.swift in Sources */,
 				BEE0DFEE25B10449009A46A4 /* AddNoteViewController.swift in Sources */,

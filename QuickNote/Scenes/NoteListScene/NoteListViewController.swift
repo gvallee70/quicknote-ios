@@ -35,7 +35,7 @@ class NoteListViewController: UIViewController {
         
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
-        searchController.searchBar.placeholder = NSLocalizedString("controller.search_bar.placeholder", comment: "")
+        searchController.searchBar.placeholder = PLACEHOLDER_SEARCH
         navigationItem.searchController = searchController
         definesPresentationContext = true
     }
@@ -54,8 +54,8 @@ class NoteListViewController: UIViewController {
                let notes = notes {
                 self.notes = notes
             } else {
-                let alert = UIAlertController(title: NSLocalizedString("controller.table.get_error_alert.title", comment: ""),
-                                              message: NSLocalizedString("controller.table.get_error_alert.message", comment: ""),
+                let alert = UIAlertController(title: LABEL_ERROR,
+                                              message: MESSAGE_ERROR_LIST,
                                               preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "Ok", style: .default))
                 self.present(alert, animated: true)
@@ -95,8 +95,8 @@ extension NoteListViewController: UITableViewDataSource {
                 if success {
                     self.notes.remove(at: indexPath.row)
                 } else {
-                    let alert = UIAlertController(title: NSLocalizedString("controller.table.delete_error_alert.title", comment: ""),
-                                                  message: NSLocalizedString("controller.table.delete_error_alert.message", comment: ""),
+                    let alert = UIAlertController(title: LABEL_ERROR,
+                                                  message: MESSAGE_ERROR_DELETE,
                                                   preferredStyle: .alert)
                     alert.addAction(UIAlertAction(title: "Ok", style: .default))
                     self.present(alert, animated: true)

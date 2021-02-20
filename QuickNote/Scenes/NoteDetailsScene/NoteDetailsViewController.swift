@@ -25,7 +25,7 @@ class NoteDetailsViewController: UIViewController {
         
         noteContentTextView.isHidden = false
         
-        backButton.title = NSLocalizedString("controller.navigation.notes", comment: "")
+        backButton.title = ACTION_BACK
         
         noteTitleTextView.text = note.title
         noteTitleTextView.textContainer.maximumNumberOfLines = 2
@@ -52,8 +52,8 @@ class NoteDetailsViewController: UIViewController {
                 if success {
                     self.navigationController?.popViewController(animated: true)
                 } else {
-                    let alert = UIAlertController(title: NSLocalizedString("controller.table.put_error_alert.title", comment: ""),
-                                                  message: NSLocalizedString("controller.table.put_error_alert.message", comment: ""),
+                    let alert = UIAlertController(title: LABEL_ERROR,
+                                                  message: MESSAGE_ERROR_UPDATE,
                                                   preferredStyle: .alert)
                     alert.addAction(UIAlertAction(title: "Ok", style: .default))
                     self.present(alert, animated: true)
