@@ -22,9 +22,9 @@ class AddNoteViewController: UIViewController {
         titleTextField.delegate = self
         contentTextView.delegate = self
         
-        cancelButton.setTitle("\(NSLocalizedString("controller.navigation.cancel", comment: ""))", for: .normal)
-        titleLabel.text = NSLocalizedString("controller.add_note.main_title", comment: "")
-        titleTextField.placeholder = NSLocalizedString("controller.add_note.title_placeholder", comment: "")
+        cancelButton.setTitle(ACTION_CANCEL, for: .normal)
+        titleLabel.text = TITLE_NOTES
+        titleTextField.placeholder = PLACEHOLDER_TITLE
         
         //Set textField UI (with bottom border only)
         setBottomBorder(textField: titleTextField)
@@ -34,7 +34,8 @@ class AddNoteViewController: UIViewController {
         validateButton.imageEdgeInsets = UIEdgeInsets(top: 25, left: 25, bottom: 25, right: 25)
         validateButton.isEnabled = false
         validateButton.tintColor = .gray
-        contentTextView.text = NSLocalizedString("controller.add_note.content_placeholder", comment: "")
+        
+        contentTextView.text = PLACEHOLDER_CONTENT
         contentTextView.font = .systemFont(ofSize: 18.0)
     }
     
@@ -45,7 +46,7 @@ class AddNoteViewController: UIViewController {
     @IBAction func validateButtonAction(_ sender: UIButton) {
         if let title = titleTextField.text {
             let content = contentTextView.text ?? ""
-            QuickNoteClient.postNote(forUser: "user", withTitle: title, andContent: content) { (success, note) in
+            QuickNoteClient.createNote(forUser: "user", withTitle: title, andContent: content) { (success, note) in
                 if success,
                    let note = note {
                     if let navigationController = self.presentingViewController as? UINavigationController,
@@ -54,8 +55,8 @@ class AddNoteViewController: UIViewController {
                     }
                     self.dismiss(animated: true, completion: nil)
                 } else {
-                    let alert = UIAlertController(title: NSLocalizedString("controller.table.post_error_alert.title", comment: ""),
-                                                  message: NSLocalizedString("controller.table.post_error_alert.message", comment: ""),
+                    let alert = UIAlertController(title: LABEL_ERROR,
+                                                  message: MESSAGE_ERROR_CREATE,
                                                   preferredStyle: .alert)
                     alert.addAction(UIAlertAction(title: "Ok", style: .default))
                     self.present(alert, animated: true)
@@ -125,7 +126,7 @@ extension AddNoteViewController: UITextFieldDelegate {
 
 extension AddNoteViewController: UITextViewDelegate {
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
-        if textView.text == NSLocalizedString("controller.add_note.content_placeholder", comment: "") {
+        if textView.text == PLACEHOLDER_CONTENT {
             textView.textColor = UIColor.black
             textView.text = ""
         }
@@ -139,14 +140,14 @@ extension AddNoteViewController: UITextViewDelegate {
     
     func textViewDidChange(_ textView: UITextView) {
         if textView.text.isEmpty {
-            textView.text = NSLocalizedString("controller.add_note.content_placeholder", comment: "")
+            textView.text = PLACEHOLDER_CONTENT
             textView.textColor = UIColor.lightGray
         }
     }
     
     func textViewDidEndEditing(_ textView: UITextView) {
         if textView.text.isEmpty {
-            textView.text = NSLocalizedString("controller.add_note.content_placeholder", comment: "")
+            textView.text = PLACEHOLDER_CONTENT
             textView.textColor = UIColor.lightGray
         }
     }
