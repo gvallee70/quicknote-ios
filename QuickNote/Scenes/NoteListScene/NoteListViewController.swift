@@ -19,8 +19,15 @@ class NoteListViewController: UIViewController {
     var filteredNotes: [Note] = []
     
     let searchController = UISearchController(searchResultsController: nil)
-    var isSearchBarEmpty: Bool { return searchController.searchBar.text?.isEmpty ?? true }
-    var isFiltering: Bool { return searchController.isActive && !isSearchBarEmpty }
+    
+    var isSearchBarEmpty: Bool {
+        return searchController.searchBar.text?.isEmpty ?? true
+    }
+    
+    var isFiltering: Bool {
+        let searchBarScopeIsFiltering = searchController.searchBar.selectedScopeButtonIndex != 0
+        return searchController.isActive && (!isSearchBarEmpty || searchBarScopeIsFiltering)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,6 +45,10 @@ class NoteListViewController: UIViewController {
         searchController.searchBar.placeholder = PLACEHOLDER_SEARCH
         navigationItem.searchController = searchController
         definesPresentationContext = true
+        
+        searchController.searchBar.scopeButtonTitles = Note.Category.allCases
+          .map { $0.rawValue }
+        searchController.searchBar.delegate = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -133,15 +144,33 @@ extension NoteListViewController: UITableViewDelegate {
 extension NoteListViewController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
         let searchBar = searchController.searchBar
-        filterContentForSearchText(searchBar.text!)
+        let category = Note.Category(rawValue: searchBar.scopeButtonTitles![searchBar.selectedScopeButtonIndex])
+        filterContentForSearchText(searchBar.text!, category: category)
     }
     
-    func filterContentForSearchText(_ searchText: String) {
+    func filterContentForSearchText(_ searchText: String, category: Note.Category? = nil) {
         filteredNotes = notes.filter { (note: Note) -> Bool in
             let searchTitle = note.title.lowercased().contains(searchText.lowercased())
             let searchContent = note.content.lowercased().contains(searchText.lowercased())
-            return searchTitle || searchContent
+            let matchCategory = category == .all //|| note.category == category
+            
+            if isSearchBarEmpty {
+                return matchCategory
+            } else {
+                return matchCategory && searchTitle && searchContent
+            }
         }
         noteTableView.reloadData()
     }
 }
+
+extension NoteListViewController: UISearchBarDelegate {
+  func searchBar(_ searchBar: UISearchBar,
+      selectedScopeButtonIndexDidChange selectedScope: Int) {
+    let category = Note.Category(rawValue:
+      searchBar.scopeButtonTitles![selectedScope])
+    filterContentForSearchText(searchBar.text!, category: category)
+  }
+}
+
+
