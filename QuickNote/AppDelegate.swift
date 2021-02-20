@@ -14,8 +14,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         let window = UIWindow(frame: UIScreen.main.bounds)
         
-        let mainViewController = MainTableViewController()
-        window.rootViewController = UINavigationController(rootViewController: mainViewController)
+        let noteListViewController = NoteListViewController()
+        window.rootViewController = UINavigationController(rootViewController: noteListViewController)
         window.makeKeyAndVisible()
         
         self.window = window

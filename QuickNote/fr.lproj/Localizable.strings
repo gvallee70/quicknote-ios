@@ -6,8 +6,17 @@
   
 */
 "controller.navigation.back" = "Retour";
-"controller.navigation.cancel" = " Annuler";
+"controller.navigation.cancel" = "Annuler";
 "controller.navigation.notes" = "Notes";
+
+"controller.table.get_error_alert.title" = "Erreur";
+"controller.table.get_error_alert.message" = "Impossible de récupérer la liste de notes. Merci de vérifier votre connexion internet.";
+"controller.table.post_error_alert.title" = "Erreur";
+"controller.table.post_error_alert.message" = "Impossible de créer la note. Merci de vérifier votre connexion internet.";
+"controller.table.put_error_alert.title" = "Erreur";
+"controller.table.put_error_alert.message" = "Impossible de modifier la note. Merci de vérifier votre connexion internet.";
+"controller.table.delete_error_alert.title" = "Erreur";
+"controller.table.delete_error_alert.message" = "Impossible de supprimer la note. Merci de vérifier votre connexion internet.";
 
 "controller.search_bar.placeholder" = "Rechercher";
 
