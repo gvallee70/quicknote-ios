@@ -15,6 +15,8 @@
 		D3ADBD50907B5F360E06ABEA /* Pods_QuickNote.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDD40977E519B4ED97DA7CA4 /* Pods_QuickNote.framework */; };
 		E4353B2F25A66FB800E47546 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4353B2E25A66FB800E47546 /* Note.swift */; };
 		E4AEF5A225C9B0B9001ED56F /* QuickNoteClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4AEF5A125C9B0B9001ED56F /* QuickNoteClient.swift */; };
+		E4DF6EC825E1D6690068896F /* SettingsBundleHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4DF6EC725E1D6690068896F /* SettingsBundleHelper.swift */; };
+		E4DF6ECC25E1D6D60068896F /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E4DF6ECB25E1D6D60068896F /* Settings.bundle */; };
 		E4E55C6225DDD4F200E3F322 /* NoteListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E55C6025DDD4F200E3F322 /* NoteListViewController.swift */; };
 		E4E55C6325DDD4F200E3F322 /* NoteListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E4E55C6125DDD4F200E3F322 /* NoteListViewController.xib */; };
 		E4E783BC25A6058F005CF503 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E783BB25A6058F005CF503 /* AppDelegate.swift */; };
@@ -34,6 +36,8 @@
 		CDD40977E519B4ED97DA7CA4 /* Pods_QuickNote.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QuickNote.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4353B2E25A66FB800E47546 /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
 		E4AEF5A125C9B0B9001ED56F /* QuickNoteClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickNoteClient.swift; sourceTree = "<group>"; };
+		E4DF6EC725E1D6690068896F /* SettingsBundleHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsBundleHelper.swift; sourceTree = "<group>"; };
+		E4DF6ECB25E1D6D60068896F /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		E4E55C6025DDD4F200E3F322 /* NoteListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteListViewController.swift; sourceTree = "<group>"; };
 		E4E55C6125DDD4F200E3F322 /* NoteListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoteListViewController.xib; sourceTree = "<group>"; };
 		E4E783B825A6058F005CF503 /* QuickNote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuickNote.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -140,10 +144,12 @@
 				E4E783D325A605D2005CF503 /* Scenes */,
 				E4AEF5A025C9B0AA001ED56F /* Services */,
 				E4E783BB25A6058F005CF503 /* AppDelegate.swift */,
-				E4E783C425A60590005CF503 /* Assets.xcassets */,
+				E4DF6EC725E1D6690068896F /* SettingsBundleHelper.swift */,
 				E4E783C625A60590005CF503 /* LaunchScreen.storyboard */,
-				E4E783C925A60590005CF503 /* Info.plist */,
+				E4E783C425A60590005CF503 /* Assets.xcassets */,
 				BE3DD8EF25B243F300A63892 /* Localizable.strings */,
+				E4E783C925A60590005CF503 /* Info.plist */,
+				E4DF6ECB25E1D6D60068896F /* Settings.bundle */,
 			);
 			path = QuickNote;
 			sourceTree = "<group>";
@@ -224,6 +230,7 @@
 				E4E55C6325DDD4F200E3F322 /* NoteListViewController.xib in Resources */,
 				E4E783C525A60590005CF503 /* Assets.xcassets in Resources */,
 				BEE0DFEF25B10449009A46A4 /* AddNoteViewController.xib in Resources */,
+				E4DF6ECC25E1D6D60068896F /* Settings.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -281,6 +288,7 @@
 				E4E783BC25A6058F005CF503 /* AppDelegate.swift in Sources */,
 				BEE0DFEE25B10449009A46A4 /* AddNoteViewController.swift in Sources */,
 				E4353B2F25A66FB800E47546 /* Note.swift in Sources */,
+				E4DF6EC825E1D6690068896F /* SettingsBundleHelper.swift in Sources */,
 				E4E55C6225DDD4F200E3F322 /* NoteListViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
