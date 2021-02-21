@@ -1,0 +1,27 @@
+/* 
+  Localizable.strings
+  QuickNote
+
+  Created by Gwendal on 15/01/2021.
+  
+*/
+"TITLE_NOTES" = "Notes";
+"TITLE_WHATS_NEW" = "Quoi de neuf ?";
+
+"PLACEHOLDER_TITLE" = "Titre";
+"PLACEHOLDER_CONTENT" = "Contenu";
+"PLACEHOLDER_SEARCH" = "Rechercher";
+
+"ACTION_BACK" = "Retour";
+"ACTION_CANCEL" = "Annuler";
+"ACTION_YES" = "Oui";
+"ACTION_NO" = "Non";
+"ACTION_OK" = "Ok";
+
+"LABEL_ERROR" = "Erreur";
+"LABEL_DELETE" = "Supprimer";
+"MESSAGE_CONFIRM_DELETE" = "Êtes-vous sûr de vouloir supprimer cette note ?";
+"MESSAGE_ERROR_LIST" = "Impossible de récupérer la liste de notes. Merci de vérifier votre connexion internet.";
+"MESSAGE_ERROR_CREATE" = "Impossible de créer la note. Merci de vérifier votre connexion internet.";
+"MESSAGE_ERROR_UPDATE" = "Impossible de modifier la note. Merci de vérifier votre connexion internet.";
+"MESSAGE_ERROR_DELETE" = "Impossible de supprimer la note. Merci de vérifier votre connexion internet.";
