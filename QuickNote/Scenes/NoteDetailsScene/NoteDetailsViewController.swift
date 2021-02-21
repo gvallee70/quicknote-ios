@@ -16,6 +16,7 @@ class NoteDetailsViewController: UIViewController {
     
     let backButton = UIBarButtonItem()
     let validateEditButton = UIBarButtonItem(barButtonSystemItem: .done , target: self, action: #selector(validateEdit))
+    let shareButton = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(shareButtonAction))
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,11 +32,10 @@ class NoteDetailsViewController: UIViewController {
         noteTitleTextView.textContainer.maximumNumberOfLines = 2
         noteContentTextView.text = note.content
         
-        navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
-        navigationItem.rightBarButtonItem = validateEditButton
-        
         validateEditButton.isEnabled = false
         
+        navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
+        navigationItem.rightBarButtonItems = [validateEditButton, shareButton]
     }
     
     class func newInstance(nibName: String?, userID: String, note: Note) -> NoteDetailsViewController {
@@ -59,6 +59,14 @@ class NoteDetailsViewController: UIViewController {
                     self.present(alert, animated: true)
                 }
             }
+        }
+    }
+    
+    @objc private func shareButtonAction() {
+        if let title = noteTitleTextView.text,
+           let content = noteContentTextView.text {
+            let shareViewController = UIActivityViewController(activityItems: ["I created a note using QuickNote!\n\nTitle: \(title)\nContent: \(content)"], applicationActivities: nil)
+            present(shareViewController, animated: true, completion: nil)
         }
     }
 }
