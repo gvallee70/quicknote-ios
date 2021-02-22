@@ -97,7 +97,7 @@ extension NoteListViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        return !isFiltering
+        return true
     }
     
     func tableView(_ tableView: UITableView,
@@ -135,7 +135,12 @@ extension NoteListViewController: UITableViewDataSource {
             alert.addAction(UIAlertAction(title: ACTION_YES, style: .destructive, handler: { (positive) in
                 QuickNoteClient.deleteNote(forUser: self.userID, withID: self.notes[indexPath.row].id) { (success) in
                     if success {
-                        self.notes.remove(at: indexPath.row)
+                        if self.isFiltering {
+                            self.filteredNotes.remove(at: indexPath.row)
+                            tableView.deleteRows(at: [indexPath], with: .left)
+                        } else {
+                            self.notes.remove(at: indexPath.row)
+                        }
                     } else {
                         let alert = UIAlertController(title: LABEL_ERROR,
                                                       message: MESSAGE_ERROR_DELETE,
