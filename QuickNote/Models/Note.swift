@@ -29,20 +29,20 @@ extension Note.Category: RawRepresentable {
 
   init?(rawValue: RawValue) {
     switch rawValue {
-    case "All": self = .all
-    case "Work": self = .work
-    case "Personal": self = .personal
-    case "Other": self = .other
+    case LABEL_ALL: self = .all
+    case LABEL_WORK: self = .work
+    case LABEL_PERSONAL: self = .personal
+    case LABEL_OTHER: self = .other
     default: return nil
     }
   }
 
   var rawValue: RawValue {
     switch self {
-    case .all: return "All"
-    case .work: return "Work"
-    case .personal: return "Personal"
-    case .other: return "Other"
+    case .all: return LABEL_ALL
+    case .work: return LABEL_WORK
+    case .personal: return LABEL_PERSONAL
+    case .other: return LABEL_OTHER
     }
   }
 }

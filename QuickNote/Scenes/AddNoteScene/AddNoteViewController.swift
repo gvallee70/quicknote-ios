@@ -25,20 +25,19 @@ class AddNoteViewController: UIViewController {
         contentTextView.delegate = self
         
         cancelButton.setTitle(ACTION_CANCEL, for: .normal)
-        titleLabel.text = TITLE_NOTES
+        titleLabel.text = TITLE_WHATS_NEW
         titleTextField.placeholder = PLACEHOLDER_TITLE
+        contentTextView.text = PLACEHOLDER_CONTENT
+        contentTextView.font = .systemFont(ofSize: 18.0)
+
         
         //Set textField UI (with bottom border only)
         setBottomBorder(textField: titleTextField)
-        setBottomBorder(textView: contentTextView)
         
         //Set valide image size
         validateButton.imageEdgeInsets = UIEdgeInsets(top: 25, left: 25, bottom: 25, right: 25)
         validateButton.isEnabled = false
         validateButton.tintColor = .gray
-        
-        contentTextView.text = PLACEHOLDER_CONTENT
-        contentTextView.font = .systemFont(ofSize: 18.0)
     }
     
 //    class func newInstance(nibName: String?, userID: String) -> NoteDetailsViewController {
@@ -88,15 +87,6 @@ class AddNoteViewController: UIViewController {
         textField.layer.masksToBounds = true
     }
     
-    func setBottomBorder(textView: UITextView) {
-        textView.layoutIfNeeded()
-        
-        bottomBorder = UIView.init(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
-        bottomBorder.backgroundColor = .red
-        bottomBorder.translatesAutoresizingMaskIntoConstraints = false
-        
-        textView.superview!.addSubview(bottomBorder)
-    }
 }
 
 

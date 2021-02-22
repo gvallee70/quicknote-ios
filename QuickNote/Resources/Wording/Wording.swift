@@ -20,10 +20,17 @@ let ACTION_YES = NSLocalizedString("ACTION_YES", comment: "")
 let ACTION_NO = NSLocalizedString("ACTION_NO", comment: "")
 let ACTION_OK = NSLocalizedString("ACTION_OK", comment: "")
 
+let LABEL_ALL = NSLocalizedString("LABEL_ALL", comment: "")
+let LABEL_WORK = NSLocalizedString("LABEL_WORK", comment: "")
+let LABEL_PERSONAL = NSLocalizedString("LABEL_PERSONAL", comment: "")
+let LABEL_OTHER = NSLocalizedString("LABEL_OTHER", comment: "")
 let LABEL_ERROR = NSLocalizedString("LABEL_ERROR", comment: "")
 let LABEL_DELETE = NSLocalizedString("LABEL_DELETE", comment: "")
+
 let MESSAGE_CONFIRM_DELETE = NSLocalizedString("MESSAGE_CONFIRM_DELETE", comment: "")
 let MESSAGE_ERROR_LIST = NSLocalizedString("MESSAGE_ERROR_LIST", comment: "")
 let MESSAGE_ERROR_CREATE = NSLocalizedString("MESSAGE_ERROR_CREATE", comment: "")
 let MESSAGE_ERROR_UPDATE = NSLocalizedString("MESSAGE_ERROR_UPDATE", comment: "")
 let MESSAGE_ERROR_DELETE = NSLocalizedString("MESSAGE_ERROR_DELETE", comment: "")
+let MESSAGE_SHARE_NOTE = NSLocalizedString("MESSAGE_SHARE_NOTE", comment: "")
+

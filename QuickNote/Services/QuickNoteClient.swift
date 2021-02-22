@@ -9,7 +9,7 @@ import Foundation
 import Alamofire
 
 class QuickNoteClient {
-    static let url = "http://localhost:8080"
+    static let url = SettingsBundleHelper.shared.currentEnvironment.url
     
     // GET /users/:user/notes
     static func getNotes(forUser userID: String, completion: @escaping (Bool, [Note]?) -> Void) {
