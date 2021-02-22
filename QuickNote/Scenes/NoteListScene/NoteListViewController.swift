@@ -100,14 +100,38 @@ extension NoteListViewController: UITableViewDataSource {
         return !isFiltering
     }
     
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
+    func tableView(_ tableView: UITableView,
+                    leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration?
+     {
+        let note = isFiltering ? filteredNotes[indexPath.row] : notes[indexPath.row]
+        
+        let shareButton = UIContextualAction(style: .normal, title:  "Share", handler: { (ac:UIContextualAction, view:UIView, success:(Bool) -> Void) in
+    
+            let shareViewController = UIActivityViewController(activityItems: ["I created a note using QuickNote!\n\nTitle: \(note.title)\nContent: \(note.content)"], applicationActivities: nil)
+                
+                self.present(shareViewController, animated: true, completion: nil)
+                
+            })
+        
+        shareButton.image = UIBarButtonItem.SystemItem.action.image()
+        shareButton.backgroundColor = .systemBlue
+     
+        return UISwipeActionsConfiguration(actions: [shareButton])
+     
+     }
+    
+    func tableView(_ tableView: UITableView,
+                    trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration?
+     {
+         let deleteButton = UIContextualAction(style: .normal, title:  "Delete", handler: { (ac:UIContextualAction, view:UIView, success:(Bool) -> Void) in
+            
             let alert = UIAlertController(title: LABEL_DELETE,
                                           message: MESSAGE_CONFIRM_DELETE,
                                           preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: ACTION_NO, style: .default, handler: { (negative) in
                 self.dismiss(animated: true)
             }))
+            
             alert.addAction(UIAlertAction(title: ACTION_YES, style: .destructive, handler: { (positive) in
                 QuickNoteClient.deleteNote(forUser: self.userID, withID: self.notes[indexPath.row].id) { (success) in
                     if success {
@@ -121,9 +145,18 @@ extension NoteListViewController: UITableViewDataSource {
                     }
                 }
             }))
+            
             self.present(alert, animated: true)
-        }
-    }
+            
+             })
+        
+        deleteButton.image = UIBarButtonItem.SystemItem.trash.image()
+        deleteButton.backgroundColor = .systemRed
+     
+        return UISwipeActionsConfiguration(actions: [deleteButton])
+     
+     }
+    
     
     func getNoteCell(tableView: UITableView) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "note-cell") else {
@@ -157,7 +190,7 @@ extension NoteListViewController: UISearchResultsUpdating {
             if isSearchBarEmpty {
                 return matchCategory
             } else {
-                return matchCategory && searchTitle && searchContent
+                return matchCategory && (searchTitle || searchContent)
             }
         }
         noteTableView.reloadData()
@@ -173,4 +206,29 @@ extension NoteListViewController: UISearchBarDelegate {
   }
 }
 
+
+extension UIBarButtonItem.SystemItem {
+    func image() -> UIImage? {
+        let tempItem = UIBarButtonItem(barButtonSystemItem: self,
+                                       target: nil,
+                                       action: nil)
+
+        // add to toolbar and render it
+        let bar = UIToolbar()
+        bar.setItems([tempItem],
+                     animated: false)
+        bar.snapshotView(afterScreenUpdates: true)
+
+        // got image from real uibutton
+        let itemView = tempItem.value(forKey: "view") as! UIView
+        for view in itemView.subviews {
+            if let button = view as? UIButton,
+                let image = button.imageView?.image {
+                return image.withRenderingMode(.alwaysTemplate)
+            }
+        }
+
+        return nil
+    }
+}
 
