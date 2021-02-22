@@ -15,6 +15,8 @@
 		BEE0DFEF25B10449009A46A4 /* AddNoteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BEE0DFED25B10449009A46A4 /* AddNoteViewController.xib */; };
 		D3ADBD50907B5F360E06ABEA /* Pods_QuickNote.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDD40977E519B4ED97DA7CA4 /* Pods_QuickNote.framework */; };
 		E4353B2F25A66FB800E47546 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4353B2E25A66FB800E47546 /* Note.swift */; };
+		E465426B25E46359006C5033 /* NoteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E465426925E46359006C5033 /* NoteTableViewCell.swift */; };
+		E465426C25E46359006C5033 /* NoteTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E465426A25E46359006C5033 /* NoteTableViewCell.xib */; };
 		E4AEF5A225C9B0B9001ED56F /* QuickNoteClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4AEF5A125C9B0B9001ED56F /* QuickNoteClient.swift */; };
 		E4DF6EC825E1D6690068896F /* SettingsBundleHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4DF6EC725E1D6690068896F /* SettingsBundleHelper.swift */; };
 		E4DF6ECC25E1D6D60068896F /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E4DF6ECB25E1D6D60068896F /* Settings.bundle */; };
@@ -37,6 +39,8 @@
 		BEE0DFED25B10449009A46A4 /* AddNoteViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddNoteViewController.xib; sourceTree = "<group>"; };
 		CDD40977E519B4ED97DA7CA4 /* Pods_QuickNote.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QuickNote.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4353B2E25A66FB800E47546 /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
+		E465426925E46359006C5033 /* NoteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteTableViewCell.swift; sourceTree = "<group>"; };
+		E465426A25E46359006C5033 /* NoteTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoteTableViewCell.xib; sourceTree = "<group>"; };
 		E4AEF5A125C9B0B9001ED56F /* QuickNoteClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickNoteClient.swift; sourceTree = "<group>"; };
 		E4DF6EC725E1D6690068896F /* SettingsBundleHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsBundleHelper.swift; sourceTree = "<group>"; };
 		E4DF6ECB25E1D6D60068896F /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
@@ -143,6 +147,8 @@
 			children = (
 				E4E55C6025DDD4F200E3F322 /* NoteListViewController.swift */,
 				E4E55C6125DDD4F200E3F322 /* NoteListViewController.xib */,
+				E465426925E46359006C5033 /* NoteTableViewCell.swift */,
+				E465426A25E46359006C5033 /* NoteTableViewCell.xib */,
 			);
 			path = NoteListScene;
 			sourceTree = "<group>";
@@ -258,6 +264,7 @@
 				E4E783C525A60590005CF503 /* Assets.xcassets in Resources */,
 				BEE0DFEF25B10449009A46A4 /* AddNoteViewController.xib in Resources */,
 				E4DF6ECC25E1D6D60068896F /* Settings.bundle in Resources */,
+				E465426C25E46359006C5033 /* NoteTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -315,6 +322,7 @@
 				E4AEF5A225C9B0B9001ED56F /* QuickNoteClient.swift in Sources */,
 				E4E783BC25A6058F005CF503 /* AppDelegate.swift in Sources */,
 				BEE0DFEE25B10449009A46A4 /* AddNoteViewController.swift in Sources */,
+				E465426B25E46359006C5033 /* NoteTableViewCell.swift in Sources */,
 				E4353B2F25A66FB800E47546 /* Note.swift in Sources */,
 				E4DF6EC825E1D6690068896F /* SettingsBundleHelper.swift in Sources */,
 				E4E55C6225DDD4F200E3F322 /* NoteListViewController.swift in Sources */,

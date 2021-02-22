@@ -20,12 +20,12 @@ class QuickNoteClient {
                     let jsonDecoder = JSONDecoder()
                     let notes = try! jsonDecoder.decode([Note].self, from: jsonData)
                     
-                    completion(true, notes)
+                    return completion(true, notes)
                 } else {
-                    completion(false, nil)
+                    return completion(false, nil)
                 }
             case .failure:
-                completion(false, nil)
+                return completion(false, nil)
             }
         }
     }
@@ -42,14 +42,16 @@ class QuickNoteClient {
             case .success:
                 if let jsonData = response.data {
                     let jsonDecoder = JSONDecoder()
-                    let note = try! jsonDecoder.decode(Note.self, from: jsonData)
+                    guard let note = try? jsonDecoder.decode(Note.self, from: jsonData) else {
+                        return completion(false, nil)
+                    }
                     
-                    completion(true, note)
+                    return completion(true, note)
                 } else {
-                    completion(false, nil)
+                    return completion(false, nil)
                 }
             case .failure:
-                completion(false, nil)
+                return completion(false, nil)
             }
         }
     }
@@ -64,9 +66,9 @@ class QuickNoteClient {
                    encoder: JSONParameterEncoder.default).responseJSON { (response) in
             switch response.result {
             case .success:
-                completion(true)
+                return completion(true)
             case .failure:
-                completion(false)
+                return completion(false)
             }
         }
     }
@@ -77,9 +79,9 @@ class QuickNoteClient {
                    method: .delete).responseJSON { (response) in
             switch response.result {
             case .success:
-                completion(true)
+                return completion(true)
             case .failure:
-                completion(false)
+                return completion(false)
             }
         }
     }

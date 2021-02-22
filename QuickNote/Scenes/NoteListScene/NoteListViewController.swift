@@ -37,6 +37,10 @@ class NoteListViewController: UIViewController {
             userID = uuid
         }
         
+        noteTableView.register(UINib(nibName: "NoteTableViewCell", bundle: nil), forCellReuseIdentifier: "note-cell")
+        noteTableView.estimatedRowHeight = 86
+        noteTableView.rowHeight = UITableView.automaticDimension
+        
         noteTableView.dataSource = self
         noteTableView.delegate = self
         
@@ -46,8 +50,9 @@ class NoteListViewController: UIViewController {
         navigationItem.searchController = searchController
         definesPresentationContext = true
         
-        searchController.searchBar.scopeButtonTitles = Note.Category.allCases
-          .map { $0.rawValue }
+        searchController.searchBar.scopeButtonTitles = Note.Category.allCases.map {
+            $0.rawValue
+        }
         searchController.searchBar.delegate = self
     }
     
@@ -91,40 +96,40 @@ extension NoteListViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let note = isFiltering ? filteredNotes[indexPath.row] : notes[indexPath.row]
-        let cell = getNoteCell(tableView: tableView)
-        cell.textLabel?.text = note.title
+        let cell = tableView.dequeueReusableCell(withIdentifier: "note-cell", for: indexPath) as! NoteTableViewCell
+        cell.titleLabel?.text = note.title
+        cell.contentLabel?.text = note.content
         return cell
     }
+    
+//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//        return 130
+//    }
     
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return true
     }
     
-    func tableView(_ tableView: UITableView,
-                    leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration?
-     {
+    func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let note = isFiltering ? filteredNotes[indexPath.row] : notes[indexPath.row]
         
         let shareButton = UIContextualAction(style: .normal, title:  "Share", handler: { (ac:UIContextualAction, view:UIView, success:(Bool) -> Void) in
-    
-            let shareViewController = UIActivityViewController(activityItems: [String(format: MESSAGE_SHARE_NOTE, note.title, note.content)], applicationActivities: nil)
-                
-                self.present(shareViewController, animated: true, completion: nil)
-                
-            })
+            
+            let shareViewController = UIActivityViewController(activityItems: [String(format: MESSAGE_SHARE_NOTE, note.title, note.content)],
+                                                               applicationActivities: nil)
+            
+            self.present(shareViewController, animated: true, completion: nil)
+            
+        })
         
         shareButton.image = UIBarButtonItem.SystemItem.action.image()
         shareButton.backgroundColor = .systemBlue
-     
+        
         return UISwipeActionsConfiguration(actions: [shareButton])
-     
-     }
+    }
     
-    func tableView(_ tableView: UITableView,
-                    trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration?
-     {
-         let deleteButton = UIContextualAction(style: .normal, title:  "Delete", handler: { (ac:UIContextualAction, view:UIView, success:(Bool) -> Void) in
-            
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let deleteButton = UIContextualAction(style: .normal, title:  "Delete", handler: { (ac:UIContextualAction, view:UIView, success:(Bool) -> Void) in
             let alert = UIAlertController(title: LABEL_DELETE,
                                           message: MESSAGE_CONFIRM_DELETE,
                                           preferredStyle: .alert)
@@ -152,22 +157,12 @@ extension NoteListViewController: UITableViewDataSource {
             }))
             
             self.present(alert, animated: true)
-            
-             })
+        })
         
         deleteButton.image = UIBarButtonItem.SystemItem.trash.image()
         deleteButton.backgroundColor = .systemRed
-     
+        
         return UISwipeActionsConfiguration(actions: [deleteButton])
-     
-     }
-    
-    
-    func getNoteCell(tableView: UITableView) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "note-cell") else {
-            return UITableViewCell(style: .default, reuseIdentifier: "note-cell")
-        }
-        return cell
     }
 }
 
@@ -203,36 +198,33 @@ extension NoteListViewController: UISearchResultsUpdating {
 }
 
 extension NoteListViewController: UISearchBarDelegate {
-  func searchBar(_ searchBar: UISearchBar,
-      selectedScopeButtonIndexDidChange selectedScope: Int) {
-    let category = Note.Category(rawValue:
-      searchBar.scopeButtonTitles![selectedScope])
-    filterContentForSearchText(searchBar.text!, category: category)
-  }
+    func searchBar(_ searchBar: UISearchBar, selectedScopeButtonIndexDidChange selectedScope: Int) {
+        let category = Note.Category(rawValue: searchBar.scopeButtonTitles![selectedScope])
+        filterContentForSearchText(searchBar.text!, category: category)
+    }
 }
-
 
 extension UIBarButtonItem.SystemItem {
     func image() -> UIImage? {
         let tempItem = UIBarButtonItem(barButtonSystemItem: self,
                                        target: nil,
                                        action: nil)
-
+        
         // add to toolbar and render it
         let bar = UIToolbar()
         bar.setItems([tempItem],
                      animated: false)
         bar.snapshotView(afterScreenUpdates: true)
-
+        
         // got image from real uibutton
         let itemView = tempItem.value(forKey: "view") as! UIView
         for view in itemView.subviews {
             if let button = view as? UIButton,
-                let image = button.imageView?.image {
+               let image = button.imageView?.image {
                 return image.withRenderingMode(.alwaysTemplate)
             }
         }
-
+        
         return nil
     }
 }
