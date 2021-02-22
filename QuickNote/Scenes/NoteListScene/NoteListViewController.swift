@@ -107,7 +107,7 @@ extension NoteListViewController: UITableViewDataSource {
         
         let shareButton = UIContextualAction(style: .normal, title:  "Share", handler: { (ac:UIContextualAction, view:UIView, success:(Bool) -> Void) in
     
-            let shareViewController = UIActivityViewController(activityItems: ["I created a note using QuickNote!\n\nTitle: \(note.title)\nContent: \(note.content)"], applicationActivities: nil)
+            let shareViewController = UIActivityViewController(activityItems: [String(format: MESSAGE_SHARE_NOTE, note.title, note.content)], applicationActivities: nil)
                 
                 self.present(shareViewController, animated: true, completion: nil)
                 

@@ -63,11 +63,8 @@ class NoteDetailsViewController: UIViewController {
     }
     
     @objc private func shareButtonAction() {
-        if let title = noteTitleTextView.text,
-           let content = noteContentTextView.text {
-            let shareViewController = UIActivityViewController(activityItems: ["I created a note using QuickNote!\n\nTitle: \(title)\nContent: \(content)"], applicationActivities: nil)
-            present(shareViewController, animated: true, completion: nil)
-        }
+        let shareViewController = UIActivityViewController(activityItems: [String(format: MESSAGE_SHARE_NOTE, note.title, note.content)], applicationActivities: nil)
+        present(shareViewController, animated: true, completion: nil)
     }
 }
 
