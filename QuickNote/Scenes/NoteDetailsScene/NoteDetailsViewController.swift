@@ -13,6 +13,7 @@ class NoteDetailsViewController: UIViewController {
     
     var userID: String!
     var note: Note!
+    var category:String!
     
     let backButton = UIBarButtonItem()
     let validateEditButton = UIBarButtonItem(barButtonSystemItem: .done , target: self, action: #selector(validateEdit))
@@ -31,10 +32,13 @@ class NoteDetailsViewController: UIViewController {
         noteTitleTextView.textContainer.maximumNumberOfLines = 2
         noteContentTextView.text = note.content
         
-        validateEditButton.isEnabled = false
+        validateEditButton.isEnabled = true
         
         navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
-        navigationItem.rightBarButtonItem = validateEditButton
+        //navigationItem.rightBarButtonItem = validateEditButton
+        let categoriesList = UIBarButtonItem(barButtonSystemItem: .bookmarks, target: self, action: #selector(setCategory))
+        
+        navigationItem.rightBarButtonItems = [validateEditButton, categoriesList]
     }
     
     class func newInstance(nibName: String?, userID: String, note: Note) -> NoteDetailsViewController {
@@ -44,10 +48,25 @@ class NoteDetailsViewController: UIViewController {
         return vc
     }
     
+    @objc private func setCategory() {
+        let actionSheet = UIAlertController(title: "Choose a category", message: nil, preferredStyle: .actionSheet)
+        Note.Category.allCases.enumerated().forEach {
+            if $1.rawValue != LABEL_ALL {
+                actionSheet.addAction(UIAlertAction(title: $1.rawValue, style: .default, handler: { (action) in
+                    self.category = action.title
+                }))
+            }
+        }
+        actionSheet.addAction(UIAlertAction(title: ACTION_CANCEL, style: .cancel, handler: nil))
+        self.present(actionSheet, animated: true, completion: nil)
+    }
+    
     @objc private func validateEdit() {
         if let title = noteTitleTextView.text,
-           let content = noteContentTextView.text {
-            QuickNoteClient.editNote(forUser: userID, withID: note.id, title: title, andContent: content) { (success) in
+           let content = noteContentTextView.text,
+           let category = category {
+            print(category)
+            QuickNoteClient.editNote(forUser: userID, withID: note.id, title: title, andContent: content, andCategory: category) { (success) in
                 if success {
                     self.navigationController?.popViewController(animated: true)
                 } else {

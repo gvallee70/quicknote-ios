@@ -16,6 +16,8 @@ class NoteTableViewCell: UITableViewCell {
         super.layoutSubviews()
         
         categoryLabel.layer.masksToBounds = true
-        categoryLabel.layer.cornerRadius = 3
+        categoryLabel.layer.cornerRadius = 10
+        categoryLabel.font = .systemFont(ofSize: 10)
+    
     }
 }

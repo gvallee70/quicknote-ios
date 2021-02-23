@@ -31,8 +31,8 @@ class QuickNoteClient {
     }
     
     // POST /users/:user/notes
-    static func createNote(forUser user: String, withTitle title: String, andContent content: String, completion: @escaping (Bool, Note?) -> Void) {
-        let parameters: [String: [String: String]] = ["note": ["title": title, "content": content]]
+    static func createNote(forUser user: String, withTitle title: String, andContent content: String, andCategory category: String, completion: @escaping (Bool, Note?) -> Void) {
+        let parameters: [String: [String: String]] = ["note": ["title": title, "content": content, "category": category]]
         
         AF.request(url + "/users/\(user)/notes",
                    method: .post,
@@ -57,8 +57,8 @@ class QuickNoteClient {
     }
     
     // PUT /users/:user/notes/:id
-    static func editNote(forUser user: String, withID id: Int, title: String, andContent content: String, completion: @escaping (Bool) -> Void) {
-        let parameters: [String: [String: String]] = ["note": ["title": title, "content": content]]
+    static func editNote(forUser user: String, withID id: Int, title: String, andContent content: String, andCategory category: String, completion: @escaping (Bool) -> Void) {
+        let parameters: [String: [String: String]] = ["note": ["title": title, "content": content, "category": category]]
         
         AF.request(url + "/users/\(user)/notes/\(id)",
                    method: .put,

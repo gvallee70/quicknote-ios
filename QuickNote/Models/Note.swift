@@ -6,13 +6,14 @@
 //
 
 import Foundation
+import UIKit
 
 struct Note: Decodable {
     let id: Int
     let user: String
     var title: String
     var content: String
-    //var category: Category
+    var category: Category?
     
     enum Category: Decodable {
       case all
@@ -27,7 +28,7 @@ extension Note.Category: CaseIterable { }
 extension Note.Category: RawRepresentable {
   typealias RawValue = String
 
-  init?(rawValue: RawValue) {
+    init?(rawValue: RawValue) {
     switch rawValue {
     case LABEL_ALL: self = .all
     case LABEL_WORK: self = .work
@@ -45,5 +46,14 @@ extension Note.Category: RawRepresentable {
     case .other: return LABEL_OTHER
     }
   }
-}
+    
+  var color: UIColor {
+    switch self {
+    case .all: return .black
+    case .work: return .systemTeal
+    case .personal: return .systemGreen
+    case .other: return .systemYellow
+    }
+  }
 
+}

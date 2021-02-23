@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BE10884325E5896B0092473D /* PaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE10884225E5896B0092473D /* PaddingLabel.swift */; };
 		BE1A8FDB25E194AF00D57769 /* Wording.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1A8FDA25E194AF00D57769 /* Wording.swift */; };
 		BE3DD8ED25B243F300A63892 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = BE3DD8EF25B243F300A63892 /* Localizable.strings */; };
 		BE5EC83325B3A27000279CF8 /* NoteDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5EC83125B3A27000279CF8 /* NoteDetailsViewController.swift */; };
@@ -30,6 +31,7 @@
 /* Begin PBXFileReference section */
 		88FD837223BB4E232B8EAF00 /* Pods-QuickNote.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuickNote.release.xcconfig"; path = "Target Support Files/Pods-QuickNote/Pods-QuickNote.release.xcconfig"; sourceTree = "<group>"; };
 		8B5213868E5BFE4C426B076B /* Pods-QuickNote.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuickNote.debug.xcconfig"; path = "Target Support Files/Pods-QuickNote/Pods-QuickNote.debug.xcconfig"; sourceTree = "<group>"; };
+		BE10884225E5896B0092473D /* PaddingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingLabel.swift; sourceTree = "<group>"; };
 		BE1A8FDA25E194AF00D57769 /* Wording.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wording.swift; sourceTree = "<group>"; };
 		BE3DD8EE25B243F300A63892 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		BE3DD8F125B2441500A63892 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -183,6 +185,7 @@
 				E4E783C925A60590005CF503 /* Info.plist */,
 				BE1A8FD925E1947500D57769 /* Resources */,
 				E4DF6ECB25E1D6D60068896F /* Settings.bundle */,
+				BE10884225E5896B0092473D /* PaddingLabel.swift */,
 			);
 			path = QuickNote;
 			sourceTree = "<group>";
@@ -323,6 +326,7 @@
 				E4E783BC25A6058F005CF503 /* AppDelegate.swift in Sources */,
 				BEE0DFEE25B10449009A46A4 /* AddNoteViewController.swift in Sources */,
 				E465426B25E46359006C5033 /* NoteTableViewCell.swift in Sources */,
+				BE10884325E5896B0092473D /* PaddingLabel.swift in Sources */,
 				E4353B2F25A66FB800E47546 /* Note.swift in Sources */,
 				E4DF6EC825E1D6690068896F /* SettingsBundleHelper.swift in Sources */,
 				E4E55C6225DDD4F200E3F322 /* NoteListViewController.swift in Sources */,

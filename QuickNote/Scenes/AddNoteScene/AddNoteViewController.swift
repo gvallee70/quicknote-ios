@@ -14,6 +14,28 @@ class AddNoteViewController: UIViewController {
     @IBOutlet weak var cancelButton: UIButton!
     @IBOutlet weak var validateButton: UIButton!
     
+    @IBOutlet weak var segmentedCategories: UISegmentedControl!
+    
+    var category: String = ""
+    @IBOutlet weak var switchCategories: UISwitch!
+
+    @IBAction func segmentedCategoriesPressed(_ sender: UISegmentedControl) {
+        switch segmentedCategories.selectedSegmentIndex {
+        case 0: category = Note.Category.work.rawValue
+        case 1: category = Note.Category.personal.rawValue
+        case 2: category = Note.Category.other.rawValue
+        default:break;
+        }
+    }
+
+    @IBAction func switchPressed(_ sender: UISwitch) {
+        if switchCategories.isOn {
+            segmentedCategories.isHidden = false
+        } else {
+            segmentedCategories.isHidden = true
+        }
+    }
+    
     var userID: String!
     
     var bottomBorder = UIView()
@@ -38,6 +60,23 @@ class AddNoteViewController: UIViewController {
         validateButton.imageEdgeInsets = UIEdgeInsets(top: 25, left: 25, bottom: 25, right: 25)
         validateButton.isEnabled = false
         validateButton.tintColor = .gray
+        
+        switchCategories.isOn = false
+        segmentedCategories.isHidden = true
+        
+        setupCategoriesSegmentedControl()
+    
+
+    }
+    
+    func setupCategoriesSegmentedControl() {
+        segmentedCategories.removeAllSegments()
+        
+        Note.Category.allCases.enumerated().forEach {
+            if $1.rawValue != LABEL_ALL {
+                segmentedCategories.insertSegment(withTitle: $1.rawValue, at: $0, animated: true)
+            }
+        }
     }
     
 //    class func newInstance(nibName: String?, userID: String) -> NoteDetailsViewController {
@@ -52,8 +91,11 @@ class AddNoteViewController: UIViewController {
     
     @IBAction func validateButtonAction(_ sender: UIButton) {
         if let title = titleTextField.text {
-            let content = contentTextView.text ?? ""
-            QuickNoteClient.createNote(forUser: userID, withTitle: title, andContent: content) { (success, note) in
+            var content = ""
+            if contentTextView.text != PLACEHOLDER_CONTENT {
+                content = contentTextView.text
+            }
+            QuickNoteClient.createNote(forUser: userID, withTitle: title, andContent: content, andCategory: category) { (success, note) in
                 if success,
                    let note = note {
                     if let navigationController = self.presentingViewController as? UINavigationController,
@@ -125,7 +167,7 @@ extension AddNoteViewController: UITextFieldDelegate {
 extension AddNoteViewController: UITextViewDelegate {
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
         if textView.text == PLACEHOLDER_CONTENT {
-            textView.textColor = UIColor.black
+            textView.textColor = UIColor(named: "TextColor")
             textView.text = ""
         }
         if(text == "\n"){

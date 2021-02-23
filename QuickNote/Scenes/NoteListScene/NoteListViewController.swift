@@ -58,7 +58,6 @@ class NoteListViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         title = "QuickNote"
-        
         navigationController?.setNavigationBarHidden(false, animated: animated)
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add,
@@ -99,6 +98,8 @@ extension NoteListViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "note-cell", for: indexPath) as! NoteTableViewCell
         cell.titleLabel?.text = note.title
         cell.contentLabel?.text = note.content
+        cell.categoryLabel.text = note.category?.rawValue
+        cell.categoryLabel.backgroundColor = note.category?.color
         return cell
     }
     
@@ -164,6 +165,7 @@ extension NoteListViewController: UITableViewDataSource {
         
         return UISwipeActionsConfiguration(actions: [deleteButton])
     }
+    
 }
 
 extension NoteListViewController: UITableViewDelegate {
@@ -173,6 +175,7 @@ extension NoteListViewController: UITableViewDelegate {
         self.navigationController?.pushViewController(controller, animated: true)
     }
 }
+
 
 extension NoteListViewController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
@@ -185,7 +188,7 @@ extension NoteListViewController: UISearchResultsUpdating {
         filteredNotes = notes.filter { (note: Note) -> Bool in
             let searchTitle = note.title.lowercased().contains(searchText.lowercased())
             let searchContent = note.content.lowercased().contains(searchText.lowercased())
-            let matchCategory = category == .all //|| note.category == category
+            let matchCategory = category == .all || note.category == category
             
             if isSearchBarEmpty {
                 return matchCategory
