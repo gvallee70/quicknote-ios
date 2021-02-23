@@ -16,7 +16,7 @@ class AddNoteViewController: UIViewController {
     
     @IBOutlet weak var segmentedCategories: UISegmentedControl!
     
-    var category: String = ""
+    var category: String!
     @IBOutlet weak var switchCategories: UISwitch!
 
     @IBAction func segmentedCategoriesPressed(_ sender: UISegmentedControl) {
@@ -73,7 +73,7 @@ class AddNoteViewController: UIViewController {
         segmentedCategories.removeAllSegments()
         
         Note.Category.allCases.enumerated().forEach {
-            if $1.rawValue != LABEL_ALL {
+            if $1.rawValue != "" {
                 segmentedCategories.insertSegment(withTitle: $1.rawValue, at: $0, animated: true)
             }
         }
@@ -95,6 +95,10 @@ class AddNoteViewController: UIViewController {
             if contentTextView.text != PLACEHOLDER_CONTENT {
                 content = contentTextView.text
             }
+            if !switchCategories.isOn {
+                category = ""
+            }
+            
             QuickNoteClient.createNote(forUser: userID, withTitle: title, andContent: content, andCategory: category) { (success, note) in
                 if success,
                    let note = note {

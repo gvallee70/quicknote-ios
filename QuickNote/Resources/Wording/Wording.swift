@@ -9,6 +9,7 @@ import Foundation
 
 let TITLE_NOTES = NSLocalizedString("TITLE_NOTES", comment: "")
 let TITLE_WHATS_NEW = NSLocalizedString("TITLE_WHATS_NEW", comment: "")
+let TITLE_CHOOSE_CATEGORY = NSLocalizedString("TITLE_CHOOSE_CATEGORY", comment: "")
 
 let PLACEHOLDER_TITLE = NSLocalizedString("PLACEHOLDER_TITLE", comment: "")
 let PLACEHOLDER_CONTENT = NSLocalizedString("PLACEHOLDER_CONTENT", comment: "")

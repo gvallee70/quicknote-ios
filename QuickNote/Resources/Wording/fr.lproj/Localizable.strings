@@ -7,6 +7,8 @@
 */
 "TITLE_NOTES" = "Notes";
 "TITLE_WHATS_NEW" = "Quoi de neuf ?";
+"TITLE_CHOOSE_CATEGORY" = "Choisissez une catégorie";
+
 
 "PLACEHOLDER_TITLE" = "Titre";
 "PLACEHOLDER_CONTENT" = "Contenu";

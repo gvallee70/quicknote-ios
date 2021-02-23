@@ -7,6 +7,7 @@
 */
 "TITLE_NOTES" = "Notes";
 "TITLE_WHATS_NEW" = "What's new?";
+"TITLE_CHOOSE_CATEGORY" = "Choose a category";
 
 "PLACEHOLDER_TITLE" = "Title";
 "PLACEHOLDER_CONTENT" = "Content";

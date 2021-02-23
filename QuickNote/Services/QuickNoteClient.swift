@@ -18,8 +18,9 @@ class QuickNoteClient {
             case .success:
                 if let jsonData = response.data {
                     let jsonDecoder = JSONDecoder()
-                    let notes = try! jsonDecoder.decode([Note].self, from: jsonData)
-                    
+                    guard let notes = try? jsonDecoder.decode([Note].self, from: jsonData) else {
+                        return completion(false, nil)
+                    }
                     return completion(true, notes)
                 } else {
                     return completion(false, nil)

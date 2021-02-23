@@ -51,8 +51,13 @@ class NoteListViewController: UIViewController {
         definesPresentationContext = true
         
         searchController.searchBar.scopeButtonTitles = Note.Category.allCases.map {
-            $0.rawValue
+            if $0.rawValue == "" {
+                return LABEL_ALL
+            } else {
+                return $0.rawValue
+            }
         }
+        
         searchController.searchBar.delegate = self
     }
     
@@ -98,8 +103,15 @@ extension NoteListViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "note-cell", for: indexPath) as! NoteTableViewCell
         cell.titleLabel?.text = note.title
         cell.contentLabel?.text = note.content
-        cell.categoryLabel.text = note.category?.rawValue
-        cell.categoryLabel.backgroundColor = note.category?.color
+        
+        if note.category.rawValue == "" {
+            cell.categoryLabel.isHidden = true
+        } else {
+            cell.categoryLabel.isHidden = false
+            cell.categoryLabel.text = note.category.rawValue
+            cell.categoryLabel.backgroundColor = note.category.color
+        }
+
         return cell
     }
     
@@ -114,7 +126,7 @@ extension NoteListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let note = isFiltering ? filteredNotes[indexPath.row] : notes[indexPath.row]
         
-        let shareButton = UIContextualAction(style: .normal, title:  "Share", handler: { (ac:UIContextualAction, view:UIView, success:(Bool) -> Void) in
+        let shareButton = UIContextualAction(style: .normal, title: nil, handler: { (ac:UIContextualAction, view:UIView, success:(Bool) -> Void) in
             
             let shareViewController = UIActivityViewController(activityItems: [String(format: MESSAGE_SHARE_NOTE, note.title, note.content)],
                                                                applicationActivities: nil)
@@ -130,7 +142,7 @@ extension NoteListViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        let deleteButton = UIContextualAction(style: .normal, title:  "Delete", handler: { (ac:UIContextualAction, view:UIView, success:(Bool) -> Void) in
+        let deleteButton = UIContextualAction(style: .normal, title: nil, handler: { (ac:UIContextualAction, view:UIView, success:(Bool) -> Void) in
             let alert = UIAlertController(title: LABEL_DELETE,
                                           message: MESSAGE_CONFIRM_DELETE,
                                           preferredStyle: .alert)
@@ -142,8 +154,15 @@ extension NoteListViewController: UITableViewDataSource {
                 QuickNoteClient.deleteNote(forUser: self.userID, withID: self.notes[indexPath.row].id) { (success) in
                     if success {
                         if self.isFiltering {
+                            let noteID = self.filteredNotes[indexPath.row].id
+                            var noteINDEX: Int = 0
+                            for (index, note) in self.notes.enumerated() {
+                                if note.id == noteID {
+                                   noteINDEX = index
+                                }
+                            }
                             self.filteredNotes.remove(at: indexPath.row)
-                            tableView.deleteRows(at: [indexPath], with: .left)
+                            self.notes.remove(at: noteINDEX)
                         } else {
                             self.notes.remove(at: indexPath.row)
                         }
@@ -184,11 +203,11 @@ extension NoteListViewController: UISearchResultsUpdating {
         filterContentForSearchText(searchBar.text!, category: category)
     }
     
-    func filterContentForSearchText(_ searchText: String, category: Note.Category? = nil) {
+    func filterContentForSearchText(_ searchText: String, category: Note.Category?) {
         filteredNotes = notes.filter { (note: Note) -> Bool in
             let searchTitle = note.title.lowercased().contains(searchText.lowercased())
             let searchContent = note.content.lowercased().contains(searchText.lowercased())
-            let matchCategory = category == .all || note.category == category
+            let matchCategory = category == .none || note.category == category
             
             if isSearchBarEmpty {
                 return matchCategory
