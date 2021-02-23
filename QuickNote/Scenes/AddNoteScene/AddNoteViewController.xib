@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddNoteViewController" customModule="QuickNote" customModuleProvider="target">
             <connections>
+                <outlet property="addCategoryLabel" destination="sJY-5v-9gD" id="YQs-sN-tyl"/>
                 <outlet property="cancelButton" destination="Z2z-hc-ZTz" id="KyM-9q-2bo"/>
                 <outlet property="contentTextView" destination="U76-dN-suQ" id="yax-Dy-U0Z"/>
                 <outlet property="segmentedCategories" destination="P1t-C1-U6L" id="cOw-4k-q8P"/>
@@ -33,7 +34,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Title" textAlignment="natural" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="z6o-0c-bCb">
-                    <rect key="frame" x="50" y="305" width="300" height="40"/>
+                    <rect key="frame" x="50" y="317" width="300" height="40"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="300" id="cTr-4W-bDH"/>
                         <constraint firstAttribute="height" constant="40" id="yyd-Nj-znK"/>
@@ -66,7 +67,7 @@
                     </connections>
                 </button>
                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U76-dN-suQ">
-                    <rect key="frame" x="50" y="415" width="300" height="347"/>
+                    <rect key="frame" x="50" y="427" width="300" height="335"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="300" id="9D1-YE-xs8"/>
@@ -101,7 +102,7 @@
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="z6o-0c-bCb" firstAttribute="top" secondItem="bJ5-Uo-aAe" secondAttribute="bottom" constant="120" id="0wt-0n-ZPR"/>
+                <constraint firstItem="z6o-0c-bCb" firstAttribute="top" secondItem="P1t-C1-U6L" secondAttribute="bottom" constant="20" id="0wt-0n-ZPR"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Knu-uI-m77" secondAttribute="trailing" constant="80" id="3f8-mm-GJQ"/>
                 <constraint firstItem="z6o-0c-bCb" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="50" id="3p4-kj-pYH"/>
                 <constraint firstItem="Z2z-hc-ZTz" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="15" id="420-5t-bWI"/>

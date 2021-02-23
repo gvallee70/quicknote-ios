@@ -14,6 +14,8 @@ class AddNoteViewController: UIViewController {
     @IBOutlet weak var cancelButton: UIButton!
     @IBOutlet weak var validateButton: UIButton!
     
+    @IBOutlet weak var addCategoryLabel: UILabel!
+    
     @IBOutlet weak var segmentedCategories: UISegmentedControl!
     
     var category: String!
@@ -48,10 +50,11 @@ class AddNoteViewController: UIViewController {
         
         cancelButton.setTitle(ACTION_CANCEL, for: .normal)
         titleLabel.text = TITLE_WHATS_NEW
+        addCategoryLabel.text = LABEL_ADD_CATEGORY
         titleTextField.placeholder = PLACEHOLDER_TITLE
         contentTextView.text = PLACEHOLDER_CONTENT
         contentTextView.font = .systemFont(ofSize: 18.0)
-
+        
         
         //Set textField UI (with bottom border only)
         setBottomBorder(textField: titleTextField)

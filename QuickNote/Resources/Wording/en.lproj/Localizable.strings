@@ -25,6 +25,7 @@
 "LABEL_OTHER" = "Other";
 "LABEL_ERROR" = "Error";
 "LABEL_DELETE" = "Delete";
+"LABEL_ADD_CATEGORY" = "Add a category";
 
 "MESSAGE_CONFIRM_DELETE" = "Are you sure to delete this note?";
 "MESSAGE_ERROR_LIST" = "Cannot retrieve notes list. Please check your internet connection.";

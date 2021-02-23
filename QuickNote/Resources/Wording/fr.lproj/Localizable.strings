@@ -26,6 +26,7 @@
 "LABEL_OTHER" = "Autre";
 "LABEL_ERROR" = "Erreur";
 "LABEL_DELETE" = "Supprimer";
+"LABEL_ADD_CATEGORY" = "Ajouter une catégorie";
 
 "MESSAGE_CONFIRM_DELETE" = "Êtes-vous sûr de vouloir supprimer cette note ?";
 "MESSAGE_ERROR_LIST" = "Impossible de récupérer la liste de notes. Merci de vérifier votre connexion internet.";

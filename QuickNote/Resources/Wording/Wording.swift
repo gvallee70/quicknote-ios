@@ -27,6 +27,7 @@ let LABEL_PERSONAL = NSLocalizedString("LABEL_PERSONAL", comment: "")
 let LABEL_OTHER = NSLocalizedString("LABEL_OTHER", comment: "")
 let LABEL_ERROR = NSLocalizedString("LABEL_ERROR", comment: "")
 let LABEL_DELETE = NSLocalizedString("LABEL_DELETE", comment: "")
+let LABEL_ADD_CATEGORY = NSLocalizedString("LABEL_ADD_CATEGORY", comment: "")
 
 let MESSAGE_CONFIRM_DELETE = NSLocalizedString("MESSAGE_CONFIRM_DELETE", comment: "")
 let MESSAGE_ERROR_LIST = NSLocalizedString("MESSAGE_ERROR_LIST", comment: "")
