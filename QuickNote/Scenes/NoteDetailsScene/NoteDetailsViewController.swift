@@ -12,8 +12,12 @@ class NoteDetailsViewController: UIViewController {
     @IBOutlet weak var noteContentTextView: UITextView!
     
     var userID: String!
-    var note: Note!
-    var category:String?
+    var note: Note! {
+        didSet {
+            validateEditButton.isEnabled = true
+        }
+    }
+//    var category:String?
     
     let backButton = UIBarButtonItem()
     let validateEditButton = UIBarButtonItem(barButtonSystemItem: .done , target: self, action: #selector(validateEdit))
@@ -53,7 +57,18 @@ class NoteDetailsViewController: UIViewController {
         Note.Category.allCases.enumerated().forEach {
             if $1.rawValue != "" {
                 actionSheet.addAction(UIAlertAction(title: $1.rawValue, style: .default, handler: { (action) in
-                    self.category = action.title
+                    if let categoryStr = action.title {
+                        switch categoryStr {
+                        case LABEL_WORK:
+                            self.note.category = .work
+                        case LABEL_PERSONAL:
+                            self.note.category = .personal
+                        case LABEL_OTHER:
+                            self.note.category = .other
+                        default:
+                            break
+                        }
+                    }
                 }))
             }
         }
@@ -62,19 +77,16 @@ class NoteDetailsViewController: UIViewController {
     }
     
     @objc private func validateEdit() {
-        if let title = noteTitleTextView.text,
-           let content = noteContentTextView.text,
-           let category = category {
-            QuickNoteClient.editNote(forUser: userID, withID: note.id, title: title, andContent: content, andCategory: category) { (success) in
-                if success {
-                    self.navigationController?.popViewController(animated: true)
-                } else {
-                    let alert = UIAlertController(title: LABEL_ERROR,
-                                                  message: MESSAGE_ERROR_UPDATE,
-                                                  preferredStyle: .alert)
-                    alert.addAction(UIAlertAction(title: ACTION_OK, style: .default))
-                    self.present(alert, animated: true)
-                }
+        print("ok")
+        QuickNoteClient.editNote(forUser: userID, withID: note.id, title: note.title, andContent: note.content, andCategory: note.category.rawValue) { (success) in
+            if success {
+                self.navigationController?.popViewController(animated: true)
+            } else {
+                let alert = UIAlertController(title: LABEL_ERROR,
+                                              message: MESSAGE_ERROR_UPDATE,
+                                              preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: ACTION_OK, style: .default))
+                self.present(alert, animated: true)
             }
         }
     }
@@ -82,7 +94,11 @@ class NoteDetailsViewController: UIViewController {
 
 extension NoteDetailsViewController: UITextViewDelegate {
     func textViewDidChange(_ textView: UITextView) {
-        validateEditButton.isEnabled = true
+        if textView == noteTitleTextView {
+            note.title = textView.text
+        } else {
+            note.content = textView.text
+        }
     }
     
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
