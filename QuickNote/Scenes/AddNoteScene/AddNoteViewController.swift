@@ -107,7 +107,7 @@ class AddNoteViewController: UIViewController {
                    let note = note {
                     if let navigationController = self.presentingViewController as? UINavigationController,
                        let presenter = navigationController.topViewController as? NoteListViewController {
-                        presenter.notes.append(note)
+                        presenter.notes.insert(note, at: 0)
                     }
                     self.dismiss(animated: true, completion: nil)
                 } else {
