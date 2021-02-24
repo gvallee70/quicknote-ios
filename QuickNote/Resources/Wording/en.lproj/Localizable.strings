@@ -1,0 +1,40 @@
+/* 
+  Localizable.strings
+  QuickNote
+
+  Created by Gwendal on 15/01/2021.
+  
+*/
+"TITLE_NOTES" = "Notes";
+"TITLE_WHATS_NEW" = "What's new?";
+"TITLE_CHOOSE_CATEGORY" = "Choose a category";
+
+"PLACEHOLDER_TITLE" = "Title";
+"PLACEHOLDER_CONTENT" = "Content";
+"PLACEHOLDER_SEARCH" = "Search";
+
+"ACTION_BACK" = "Back";
+"ACTION_CANCEL" = "Cancel";
+"ACTION_YES" = "Yes";
+"ACTION_NO" = "No";
+"ACTION_OK" = "Ok";
+
+"LABEL_ALL" = "All";
+"LABEL_WORK" = "Work";
+"LABEL_PERSONAL" = "Personal";
+"LABEL_OTHER" = "Other";
+"LABEL_ERROR" = "Error";
+"LABEL_DELETE" = "Delete";
+"LABEL_ADD_CATEGORY" = "Add a category";
+
+"MESSAGE_CONFIRM_DELETE" = "Are you sure to delete this note?";
+"MESSAGE_ERROR_LIST" = "Cannot retrieve notes list. Please check your internet connection.";
+"MESSAGE_ERROR_CREATE" = "Cannot create note. Please check your internet connection.";
+"MESSAGE_ERROR_UPDATE" = "Cannot modify note. Please check your internet connection.";
+"MESSAGE_ERROR_DELETE" = "Cannot delete note. Please check your internet connection.";
+"MESSAGE_SHARE_NOTE" = "I created a note using QuickNote! \n\nTitle: %@ \nContent: %@";
+
+
+
+
+

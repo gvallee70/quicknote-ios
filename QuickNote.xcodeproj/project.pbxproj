@@ -3,25 +3,56 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BE10884325E5896B0092473D /* PaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE10884225E5896B0092473D /* PaddingLabel.swift */; };
+		BE1A8FDB25E194AF00D57769 /* Wording.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1A8FDA25E194AF00D57769 /* Wording.swift */; };
+		BE3DD8ED25B243F300A63892 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = BE3DD8EF25B243F300A63892 /* Localizable.strings */; };
+		BE5EC83325B3A27000279CF8 /* NoteDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5EC83125B3A27000279CF8 /* NoteDetailsViewController.swift */; };
+		BE5EC83425B3A27000279CF8 /* NoteDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE5EC83225B3A27000279CF8 /* NoteDetailsViewController.xib */; };
+		BEE0DFEE25B10449009A46A4 /* AddNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE0DFEC25B10449009A46A4 /* AddNoteViewController.swift */; };
+		BEE0DFEF25B10449009A46A4 /* AddNoteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BEE0DFED25B10449009A46A4 /* AddNoteViewController.xib */; };
+		D3ADBD50907B5F360E06ABEA /* Pods_QuickNote.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDD40977E519B4ED97DA7CA4 /* Pods_QuickNote.framework */; };
+		E4353B2F25A66FB800E47546 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4353B2E25A66FB800E47546 /* Note.swift */; };
+		E465426B25E46359006C5033 /* NoteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E465426925E46359006C5033 /* NoteTableViewCell.swift */; };
+		E465426C25E46359006C5033 /* NoteTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E465426A25E46359006C5033 /* NoteTableViewCell.xib */; };
+		E4AEF5A225C9B0B9001ED56F /* QuickNoteClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4AEF5A125C9B0B9001ED56F /* QuickNoteClient.swift */; };
+		E4DF6EC825E1D6690068896F /* SettingsBundleHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4DF6EC725E1D6690068896F /* SettingsBundleHelper.swift */; };
+		E4DF6ECC25E1D6D60068896F /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E4DF6ECB25E1D6D60068896F /* Settings.bundle */; };
+		E4E55C6225DDD4F200E3F322 /* NoteListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E55C6025DDD4F200E3F322 /* NoteListViewController.swift */; };
+		E4E55C6325DDD4F200E3F322 /* NoteListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E4E55C6125DDD4F200E3F322 /* NoteListViewController.xib */; };
 		E4E783BC25A6058F005CF503 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E783BB25A6058F005CF503 /* AppDelegate.swift */; };
 		E4E783C525A60590005CF503 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4E783C425A60590005CF503 /* Assets.xcassets */; };
 		E4E783C825A60590005CF503 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4E783C625A60590005CF503 /* LaunchScreen.storyboard */; };
-		E4E783D625A605EF005CF503 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E783D425A605EF005CF503 /* HomeViewController.swift */; };
-		E4E783D725A605EF005CF503 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E4E783D525A605EF005CF503 /* HomeViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		88FD837223BB4E232B8EAF00 /* Pods-QuickNote.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuickNote.release.xcconfig"; path = "Target Support Files/Pods-QuickNote/Pods-QuickNote.release.xcconfig"; sourceTree = "<group>"; };
+		8B5213868E5BFE4C426B076B /* Pods-QuickNote.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuickNote.debug.xcconfig"; path = "Target Support Files/Pods-QuickNote/Pods-QuickNote.debug.xcconfig"; sourceTree = "<group>"; };
+		BE10884225E5896B0092473D /* PaddingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingLabel.swift; sourceTree = "<group>"; };
+		BE1A8FDA25E194AF00D57769 /* Wording.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wording.swift; sourceTree = "<group>"; };
+		BE3DD8EE25B243F300A63892 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		BE3DD8F125B2441500A63892 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		BE5EC83125B3A27000279CF8 /* NoteDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteDetailsViewController.swift; sourceTree = "<group>"; };
+		BE5EC83225B3A27000279CF8 /* NoteDetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoteDetailsViewController.xib; sourceTree = "<group>"; };
+		BEE0DFEC25B10449009A46A4 /* AddNoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNoteViewController.swift; sourceTree = "<group>"; };
+		BEE0DFED25B10449009A46A4 /* AddNoteViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddNoteViewController.xib; sourceTree = "<group>"; };
+		CDD40977E519B4ED97DA7CA4 /* Pods_QuickNote.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QuickNote.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E4353B2E25A66FB800E47546 /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
+		E465426925E46359006C5033 /* NoteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteTableViewCell.swift; sourceTree = "<group>"; };
+		E465426A25E46359006C5033 /* NoteTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoteTableViewCell.xib; sourceTree = "<group>"; };
+		E4AEF5A125C9B0B9001ED56F /* QuickNoteClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickNoteClient.swift; sourceTree = "<group>"; };
+		E4DF6EC725E1D6690068896F /* SettingsBundleHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsBundleHelper.swift; sourceTree = "<group>"; };
+		E4DF6ECB25E1D6D60068896F /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		E4E55C6025DDD4F200E3F322 /* NoteListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteListViewController.swift; sourceTree = "<group>"; };
+		E4E55C6125DDD4F200E3F322 /* NoteListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoteListViewController.xib; sourceTree = "<group>"; };
 		E4E783B825A6058F005CF503 /* QuickNote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuickNote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4E783BB25A6058F005CF503 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E4E783C425A60590005CF503 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E4E783C725A60590005CF503 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E4E783C925A60590005CF503 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E4E783D425A605EF005CF503 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		E4E783D525A605EF005CF503 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +60,108 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D3ADBD50907B5F360E06ABEA /* Pods_QuickNote.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6D4A90F2777D19A377142161 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CDD40977E519B4ED97DA7CA4 /* Pods_QuickNote.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BE1A8FD925E1947500D57769 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				BE1A8FDF25E194F600D57769 /* Wording */,
+				BE1A8FDE25E194DB00D57769 /* Assets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		BE1A8FDE25E194DB00D57769 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				E4E783C425A60590005CF503 /* Assets.xcassets */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		BE1A8FDF25E194F600D57769 /* Wording */ = {
+			isa = PBXGroup;
+			children = (
+				BE3DD8EF25B243F300A63892 /* Localizable.strings */,
+				BE1A8FDA25E194AF00D57769 /* Wording.swift */,
+			);
+			path = Wording;
+			sourceTree = "<group>";
+		};
+		BE5EC83025B3A23D00279CF8 /* NoteDetailsScene */ = {
+			isa = PBXGroup;
+			children = (
+				BE5EC83125B3A27000279CF8 /* NoteDetailsViewController.swift */,
+				BE5EC83225B3A27000279CF8 /* NoteDetailsViewController.xib */,
+			);
+			path = NoteDetailsScene;
+			sourceTree = "<group>";
+		};
+		BEE0DFEB25B10364009A46A4 /* AddNoteScene */ = {
+			isa = PBXGroup;
+			children = (
+				BEE0DFEC25B10449009A46A4 /* AddNoteViewController.swift */,
+				BEE0DFED25B10449009A46A4 /* AddNoteViewController.xib */,
+			);
+			path = AddNoteScene;
+			sourceTree = "<group>";
+		};
+		DDAF960719788619A01A3559 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8B5213868E5BFE4C426B076B /* Pods-QuickNote.debug.xcconfig */,
+				88FD837223BB4E232B8EAF00 /* Pods-QuickNote.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		E4353B2D25A66FAB00E47546 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E4353B2E25A66FB800E47546 /* Note.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		E4AEF5A025C9B0AA001ED56F /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				E4AEF5A125C9B0B9001ED56F /* QuickNoteClient.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		E4E55C5F25DDD4BF00E3F322 /* NoteListScene */ = {
+			isa = PBXGroup;
+			children = (
+				E4E55C6025DDD4F200E3F322 /* NoteListViewController.swift */,
+				E4E55C6125DDD4F200E3F322 /* NoteListViewController.xib */,
+				E465426925E46359006C5033 /* NoteTableViewCell.swift */,
+				E465426A25E46359006C5033 /* NoteTableViewCell.xib */,
+			);
+			path = NoteListScene;
+			sourceTree = "<group>";
+		};
 		E4E783AF25A6058F005CF503 = {
 			isa = PBXGroup;
 			children = (
 				E4E783BA25A6058F005CF503 /* QuickNote */,
 				E4E783B925A6058F005CF503 /* Products */,
+				DDAF960719788619A01A3559 /* Pods */,
+				6D4A90F2777D19A377142161 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,11 +176,16 @@
 		E4E783BA25A6058F005CF503 /* QuickNote */ = {
 			isa = PBXGroup;
 			children = (
-				E4E783D325A605D2005CF503 /* Scenes */,
 				E4E783BB25A6058F005CF503 /* AppDelegate.swift */,
-				E4E783C425A60590005CF503 /* Assets.xcassets */,
+				E4353B2D25A66FAB00E47546 /* Models */,
+				E4E783D325A605D2005CF503 /* Scenes */,
+				E4AEF5A025C9B0AA001ED56F /* Services */,
+				E4DF6EC725E1D6690068896F /* SettingsBundleHelper.swift */,
 				E4E783C625A60590005CF503 /* LaunchScreen.storyboard */,
 				E4E783C925A60590005CF503 /* Info.plist */,
+				BE1A8FD925E1947500D57769 /* Resources */,
+				E4DF6ECB25E1D6D60068896F /* Settings.bundle */,
+				BE10884225E5896B0092473D /* PaddingLabel.swift */,
 			);
 			path = QuickNote;
 			sourceTree = "<group>";
@@ -66,8 +193,9 @@
 		E4E783D325A605D2005CF503 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				E4E783D425A605EF005CF503 /* HomeViewController.swift */,
-				E4E783D525A605EF005CF503 /* HomeViewController.xib */,
+				E4E55C5F25DDD4BF00E3F322 /* NoteListScene */,
+				BEE0DFEB25B10364009A46A4 /* AddNoteScene */,
+				BE5EC83025B3A23D00279CF8 /* NoteDetailsScene */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -79,9 +207,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E4E783CC25A60590005CF503 /* Build configuration list for PBXNativeTarget "QuickNote" */;
 			buildPhases = (
+				228388FC0E06D07EDA80D136 /* [CP] Check Pods Manifest.lock */,
 				E4E783B425A6058F005CF503 /* Sources */,
 				E4E783B525A6058F005CF503 /* Frameworks */,
 				E4E783B625A6058F005CF503 /* Resources */,
+				1D298EB083EEA22DD69BCC5A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -113,6 +243,7 @@
 			knownRegions = (
 				en,
 				Base,
+				fr,
 			);
 			mainGroup = E4E783AF25A6058F005CF503;
 			productRefGroup = E4E783B925A6058F005CF503 /* Products */;
@@ -130,26 +261,90 @@
 			buildActionMask = 2147483647;
 			files = (
 				E4E783C825A60590005CF503 /* LaunchScreen.storyboard in Resources */,
+				BE3DD8ED25B243F300A63892 /* Localizable.strings in Resources */,
+				BE5EC83425B3A27000279CF8 /* NoteDetailsViewController.xib in Resources */,
+				E4E55C6325DDD4F200E3F322 /* NoteListViewController.xib in Resources */,
 				E4E783C525A60590005CF503 /* Assets.xcassets in Resources */,
-				E4E783D725A605EF005CF503 /* HomeViewController.xib in Resources */,
+				BEE0DFEF25B10449009A46A4 /* AddNoteViewController.xib in Resources */,
+				E4DF6ECC25E1D6D60068896F /* Settings.bundle in Resources */,
+				E465426C25E46359006C5033 /* NoteTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1D298EB083EEA22DD69BCC5A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-QuickNote/Pods-QuickNote-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-QuickNote/Pods-QuickNote-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-QuickNote/Pods-QuickNote-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		228388FC0E06D07EDA80D136 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-QuickNote-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		E4E783B425A6058F005CF503 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE5EC83325B3A27000279CF8 /* NoteDetailsViewController.swift in Sources */,
+				BE1A8FDB25E194AF00D57769 /* Wording.swift in Sources */,
+				E4AEF5A225C9B0B9001ED56F /* QuickNoteClient.swift in Sources */,
 				E4E783BC25A6058F005CF503 /* AppDelegate.swift in Sources */,
-				E4E783D625A605EF005CF503 /* HomeViewController.swift in Sources */,
+				BEE0DFEE25B10449009A46A4 /* AddNoteViewController.swift in Sources */,
+				E465426B25E46359006C5033 /* NoteTableViewCell.swift in Sources */,
+				BE10884325E5896B0092473D /* PaddingLabel.swift in Sources */,
+				E4353B2F25A66FB800E47546 /* Note.swift in Sources */,
+				E4DF6EC825E1D6690068896F /* SettingsBundleHelper.swift in Sources */,
+				E4E55C6225DDD4F200E3F322 /* NoteListViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		BE3DD8EF25B243F300A63892 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BE3DD8EE25B243F300A63892 /* en */,
+				BE3DD8F125B2441500A63892 /* fr */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		E4E783C625A60590005CF503 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -165,6 +360,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -212,7 +408,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -226,6 +422,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -267,7 +464,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -279,6 +476,7 @@
 		};
 		E4E783CD25A60590005CF503 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8B5213868E5BFE4C426B076B /* Pods-QuickNote.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -298,6 +496,7 @@
 		};
 		E4E783CE25A60590005CF503 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 88FD837223BB4E232B8EAF00 /* Pods-QuickNote.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
