@@ -98,7 +98,7 @@ class AddNoteViewController: UIViewController {
             if contentTextView.text != PLACEHOLDER_CONTENT {
                 content = contentTextView.text
             }
-            if !switchCategories.isOn {
+            if category == nil {
                 category = ""
             }
             
